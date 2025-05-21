@@ -8,6 +8,6 @@ package controller;
  *
  * @author User
  */
-public class New {
+public class SignupController {
     
 }

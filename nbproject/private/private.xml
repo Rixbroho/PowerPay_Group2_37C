@@ -6,6 +6,8 @@
             <file>file:/D:/PowerPay/src/model/UserData.java</file>
             <file>file:/D:/PowerPay/src/View/LogIn.java</file>
             <file>file:/D:/PowerPay/src/View/SignUp.java</file>
+            <file>file:/D:/PowerPay/src/Database/MyDatabase.java</file>
+            <file>file:/D:/PowerPay/src/Dao/UserDao.java</file>
         </group>
     </open-files>
 </project-private>
