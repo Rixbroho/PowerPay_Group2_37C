@@ -4,8 +4,8 @@
  */
 package controller;
 
-import Dao.UserDao;
-import View.SignUp;
+//import Dao.UserDao;
+//import View.SignUp;
 
 /**
  *
@@ -13,16 +13,16 @@ import View.SignUp;
  */
 
 public class SignupController {
-    private final UserDao userDao = new UserDao();
-private final SignUp userView;
-public SignupController(SignUp userView) {
-this.userView = userView;
-userView.addAddUserListener(new AddUserListener());
-}
-public void open() {
-this.userView.setVisible(true);
-}
-public void close() {
-this.userView.dispose();
-}
+//    private final UserDao userDao = new UserDao();
+//    private final SignUp userView;
+//    public SignupController(SignUp userView) {
+//        this.userView = userView;
+//        userView.addAddUserListener(new AddUserListener());
+//    }
+//    public void open() {
+//        this.userView.setVisible(true);
+//    }
+//    public void close() {
+//        this.userView.dispose();
+//    }
 }
