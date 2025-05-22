@@ -12,6 +12,6 @@ public interface Database {
 
     Connection openConnection();
     void closeConnection(Connection conn);
-    ResultSet runQuery(Connection conn, String query); //reference
+    ResultSet executeQuery(Connection conn, String query); //reference
     int executeUpdate(Connection conn, String query);
 }
