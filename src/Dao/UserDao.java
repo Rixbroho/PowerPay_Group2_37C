@@ -20,11 +20,34 @@ public class UserDao {
     Connection conn=mysql.openConnection();
     
     public void signUp(UserData user){
-        String sql="Insert into users (username,email,password) values (?,?,?)";
+        String sql="Insert into users (username,email,password,number) values (?,?,?,?)";
         try(PreparedStatement pstm=conn.prepareStatement(sql)){
           pstm.setString(1, user.getUsername());
+          pstm.setString(2, user.getEmail());
+          pstm.setString(3, user.getPassword());
+          pstm.setInt(4, user.getNumber());
+          pstm.executeUpdate();
+          
         }catch(SQLException ex){
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE,null,ex);
+        } finally {
+            mysql.closeConnection(conn);
         }
     }
+    public boolean checkUser(UserData user) {
+Connection conn = mysql.openConnection();
+String sql = "SELECT * FROM users WHERE email = ? OR username = ?";
+try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+    pstm.setString(1, user.getEmail());
+    pstm.setString(2, user.getUsername());
+    java.sql.ResultSet result = pstm.executeQuery();
+    return result.next();
+} catch (SQLException ex) {
+Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+} finally {
+mysql.closeConnection(conn);
 }
+return false;
+}
+}
+

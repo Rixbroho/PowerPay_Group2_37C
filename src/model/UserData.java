@@ -13,11 +13,14 @@ public class UserData {
     private String username;
     private String email;
     private String password;
+    private int number;
+    
     
     public UserData (String username,String email,String password){
         this.username=username;
         this.email=email;
         this.password=password;
+        this.number=number;
     }
     
     public int getId(){
@@ -44,4 +47,12 @@ public class UserData {
     public void setPassword(String password){
         this.password=password;
     }
+        public int getNumber(){
+        return number;
+    }
+    
+    public void setNumber(int number){
+        this.number=number;
+    }
+    
 }
