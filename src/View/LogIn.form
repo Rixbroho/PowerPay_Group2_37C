@@ -185,7 +185,7 @@
             <Component class="javax.swing.JLabel" name="Logo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/powerpay/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"/>
+                  <Image iconType="3" name="/Image/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"/>
                 </Property>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[103, 107]"/>

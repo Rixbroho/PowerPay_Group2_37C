@@ -63,7 +63,7 @@ public class LogIn extends javax.swing.JPanel {
 
         LogoPanal.setPreferredSize(new java.awt.Dimension(103, 107));
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/powerpay/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"))); // NOI18N
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"))); // NOI18N
         Logo.setMaximumSize(new java.awt.Dimension(103, 107));
         Logo.setMinimumSize(new java.awt.Dimension(103, 107));
         Logo.setPreferredSize(new java.awt.Dimension(103, 107));
@@ -186,9 +186,7 @@ public class LogIn extends javax.swing.JPanel {
     private javax.swing.JButton SIGNUPBUTTON;
     private javax.swing.JCheckBox button;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel login;
     private javax.swing.JPasswordField password;
