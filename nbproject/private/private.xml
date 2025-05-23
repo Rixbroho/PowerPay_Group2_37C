@@ -3,10 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/E:/PowerPay_Group2_37C/src/View/LogIn.java</file>
             <file>file:/E:/PowerPay_Group2_37C/src/View/SignUp.java</file>
             <file>file:/E:/PowerPay_Group2_37C/src/View/Dashboard.java</file>
             <file>file:/E:/PowerPay_Group2_37C/src/View/Dashboards.java</file>
+=======
+            <file>file:/D:/PowerPay/src/controller/SignupController.java</file>
+            <file>file:/D:/PowerPay/src/View/SignUp.java</file>
+            <file>file:/D:/PowerPay/src/Database/MyDatabase.java</file>
+            <file>file:/D:/PowerPay/src/Dao/UserDao.java</file>
+            <file>file:/D:/PowerPay/src/View/LogIn.java</file>
+            <file>file:/D:/PowerPay/src/View/EntryPage.java</file>
+            <file>file:/D:/PowerPay/src/model/UserData.java</file>
+            <file>file:/D:/PowerPay/src/New/java.java</file>
+>>>>>>> eccc00be31f0eb61d37d1050249cc8922d0760ea
         </group>
     </open-files>
 </project-private>
