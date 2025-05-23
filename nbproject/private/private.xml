@@ -5,9 +5,12 @@
         <group>
             <file>file:/D:/PowerPay/src/controller/SignupController.java</file>
             <file>file:/D:/PowerPay/src/View/SignUp.java</file>
-            <file>file:/D:/PowerPay/src/View/LogIn.java</file>
             <file>file:/D:/PowerPay/src/Database/MyDatabase.java</file>
             <file>file:/D:/PowerPay/src/Dao/UserDao.java</file>
+            <file>file:/D:/PowerPay/src/View/LogIn.java</file>
+            <file>file:/D:/PowerPay/src/View/EntryPage.java</file>
+            <file>file:/D:/PowerPay/src/model/UserData.java</file>
+            <file>file:/D:/PowerPay/src/New/java.java</file>
         </group>
     </open-files>
 </project-private>
