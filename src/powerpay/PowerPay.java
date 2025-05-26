@@ -4,6 +4,8 @@
  */
 package powerpay;
 import Database.*;
+import View.SignUp;
+import controller.SignupController;
 /**
  *
  * @author User
@@ -21,6 +23,10 @@ public class PowerPay {
         } else {
             System.out.println("Database connected successfully!");
         }
+        
+        SignUp signupForm = new SignUp();
+        SignupController controller = new SignupController(signupForm);
+        controller.open();
     }
     
 }
