@@ -106,7 +106,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jPanel2.setPreferredSize(new java.awt.Dimension(103, 107));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/powerpay/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/WhatsApp Image 2025-04-28 at 13.16.32 (1).jpeg"))); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(103, 107));
         jLabel2.setMinimumSize(new java.awt.Dimension(103, 107));
         jLabel2.setPreferredSize(new java.awt.Dimension(103, 107));
