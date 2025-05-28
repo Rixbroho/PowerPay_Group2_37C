@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/SignUp.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/Dao/ResultSet.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/Dao/UserDao.java</file>
             <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/controller/SignupController.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/Dao/UserDao.java</file>
             <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/model/New.java</file>
             <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/model/UserData.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/sign.form</file>
             <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/LogIn.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/ForgetPassword.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/Dashboard.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/EntryPage.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/powerpay/PowerPay.java</file>
+            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/PowerPay_Group2_37C/src/View/SignUp.java</file>
         </group>
     </open-files>
 </project-private>

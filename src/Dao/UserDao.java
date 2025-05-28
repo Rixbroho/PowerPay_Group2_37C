@@ -25,7 +25,7 @@ public class UserDao {
           pstm.setString(1, user.getUsername());
           pstm.setString(2, user.getEmail());
           pstm.setString(3, user.getPassword());
-          pstm.setInt(4, user.getNumber());
+          pstm.setString(4, user.getNumber());
           pstm.executeUpdate();
           
         }catch(SQLException ex){
