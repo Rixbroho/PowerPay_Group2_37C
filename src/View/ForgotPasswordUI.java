@@ -138,4 +138,4 @@ title.setBounds(140, 122, 220, 30); // moved down by 30px
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-}
+} 
