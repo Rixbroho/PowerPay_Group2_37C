@@ -25,7 +25,7 @@ frame.add(logoLabel);
 
 
         JLabel title = new JLabel("Forgot password", SwingConstants.CENTER);
-title.setBounds(140, 120, 220, 30); // moved down by 30px
+title.setBounds(140, 122, 220, 30); // moved down by 30px
 
         title.setFont(new Font("Arial", Font.BOLD, 22));
         title.setForeground(new Color(145, 202, 255));
