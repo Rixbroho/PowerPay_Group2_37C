@@ -24,9 +24,9 @@ public class PowerPay {
             System.out.println("Database connected successfully!");
         }
         
-//        SignUp signupForm = new SignUp();
-//        SignupController controller = new SignupController(signupForm);
-//        controller.open();
+        SignUp signupForm = new SignUp();
+        SignupController controller = new SignupController(signupForm);
+        controller.open();
     }
     
 }
