@@ -54,7 +54,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
-                          <Component id="SIGNUPBUTTON" min="-2" max="-2" attributes="0"/>
+                          <Component id="LogInButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="username" alignment="1" min="-2" pref="228" max="-2" attributes="0"/>
+                              <Component id="userName" alignment="1" min="-2" pref="228" max="-2" attributes="0"/>
                               <Component id="password" alignment="1" min="-2" pref="228" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -100,13 +100,13 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="username" min="-2" max="-2" attributes="0"/>
+                  <Component id="userName" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="password" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="button" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="SIGNUPBUTTON" min="-2" max="-2" attributes="0"/>
+                  <Component id="LogInButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="13" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -119,13 +119,17 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="username">
+        <Component class="javax.swing.JTextField" name="userName">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="USER NAME or Email"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="userNameFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="userNameFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="button">
           <Properties>
@@ -138,12 +142,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="SIGNUPBUTTON">
+        <Component class="javax.swing.JButton" name="LogInButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Log In"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SIGNUPBUTTONActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator1">
@@ -166,8 +170,12 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="password">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+            <Property name="text" type="java.lang.String" value="password12345"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="passwordFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="passwordFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="sign1">
           <Properties>

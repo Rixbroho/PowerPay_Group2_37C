@@ -32,12 +32,12 @@ public class SignUp extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
+        userName = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         number = new javax.swing.JTextField();
-        SIGNUPBUTTON = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        signUpButton = new javax.swing.JButton();
+        keepMeLogIn = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
 
@@ -79,47 +79,83 @@ public class SignUp extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        username.setText("Username");
-        username.addActionListener(new java.awt.event.ActionListener() {
+        userName.setForeground(new java.awt.Color(204, 204, 204));
+        userName.setText("Username");
+        userName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                userNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                userNameFocusLost(evt);
+            }
+        });
+        userName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
+                userNameActionPerformed(evt);
             }
         });
 
+        email.setForeground(new java.awt.Color(204, 204, 204));
         email.setText("Email");
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailFocusLost(evt);
+            }
+        });
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
 
-        password.setText("jPasswordField1");
+        password.setForeground(new java.awt.Color(204, 204, 204));
+        password.setText("password12345");
+        password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                passwordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                passwordFocusLost(evt);
+            }
+        });
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
 
+        number.setForeground(new java.awt.Color(204, 204, 204));
         number.setText("Number");
+        number.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                numberFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                numberFocusLost(evt);
+            }
+        });
         number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numberActionPerformed(evt);
             }
         });
 
-        SIGNUPBUTTON.setText("Sign up");
-        SIGNUPBUTTON.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setText("Sign up");
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SIGNUPBUTTONActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setBackground(new java.awt.Color(0, 30, 63));
-        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setText("Keep me sign in");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        keepMeLogIn.setBackground(new java.awt.Color(0, 30, 63));
+        keepMeLogIn.setForeground(new java.awt.Color(255, 255, 255));
+        keepMeLogIn.setText("Keep me sign in");
+        keepMeLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                keepMeLogInActionPerformed(evt);
             }
         });
 
@@ -141,18 +177,18 @@ public class SignUp extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(username)
+                                .addComponent(userName)
                                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(number, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(SIGNUPBUTTON))
+                        .addComponent(signUpButton))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(keepMeLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(140, 140, 140))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,7 +201,7 @@ public class SignUp extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -173,9 +209,9 @@ public class SignUp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(keepMeLogIn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SIGNUPBUTTON)
+                .addComponent(signUpButton)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -209,17 +245,73 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailActionPerformed
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
+    }//GEN-LAST:event_userNameActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void keepMeLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keepMeLogInActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_keepMeLogInActionPerformed
 
-    private void SIGNUPBUTTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGNUPBUTTONActionPerformed
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SIGNUPBUTTONActionPerformed
+    }//GEN-LAST:event_signUpButtonActionPerformed
+
+    private void userNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameFocusGained
+        // TODO add your handling code here:
+        if(userName.getText().equals("Username")){
+            userName.setText("");
+        }
+    }//GEN-LAST:event_userNameFocusGained
+
+    private void userNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameFocusLost
+        // TODO add your handling code here:
+        if(userName.getText().equals("")){
+            userName.setText("Username");
+        }
+    }//GEN-LAST:event_userNameFocusLost
+
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+        // TODO add your handling code here:
+        if(email.getText().equals("Email")){
+            email.setText("");
+        }
+    }//GEN-LAST:event_emailFocusGained
+
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+        // TODO add your handling code here:\
+        if(email.getText().equals("")){
+            email.setText("Email");
+        }
+    }//GEN-LAST:event_emailFocusLost
+
+    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
+        // TODO add your handling code here:
+        if(String.valueOf(password.getPassword()).equals("password12345")){
+            password.setText("");
+        }
+    }//GEN-LAST:event_passwordFocusGained
+
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
+        // TODO add your handling code here:
+        if(String.valueOf(password.getPassword()).equals("")){
+            password.setText("password12345");
+        }
+    }//GEN-LAST:event_passwordFocusLost
+
+    private void numberFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberFocusGained
+        // TODO add your handling code here:
+        if(number.getText().equals("Number")){
+            number.setText("");
+        }
+    }//GEN-LAST:event_numberFocusGained
+
+    private void numberFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_numberFocusLost
+        // TODO add your handling code here:
+        if(number.getText().equals("")){
+            number.setText("Number");
+        }
+    }//GEN-LAST:event_numberFocusLost
 
     /**
      * @param args the command line arguments
@@ -257,21 +349,21 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton SIGNUPBUTTON;
     private javax.swing.JTextField email;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JCheckBox keepMeLogIn;
     private javax.swing.JTextField number;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField username;
+    private javax.swing.JButton signUpButton;
+    private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 public  void addAddUserListener(ActionListener listener){
-    SIGNUPBUTTON.addActionListener(listener);
+    signUpButton.addActionListener(listener);
 }
 public javax.swing.JTextField getEmailfield(){
     return email;
@@ -280,7 +372,7 @@ public javax.swing.JPasswordField getPasswordfield(){
     return password;
 }
 public javax.swing.JTextField getUsernamefield(){
-    return username;
+    return userName;
 }
 public javax.swing.JTextField getNumberfield(){
     return number;
