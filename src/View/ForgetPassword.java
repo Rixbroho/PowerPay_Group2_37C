@@ -62,7 +62,7 @@ public class ForgetPassword extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Forgot Password");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/494327672_2092440944499081_5739252673242155345_n.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Logo.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
