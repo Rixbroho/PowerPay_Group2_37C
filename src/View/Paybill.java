@@ -44,7 +44,7 @@ public class Paybill extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 30, 63));
         jPanel1.setForeground(new java.awt.Color(204, 204, 204));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

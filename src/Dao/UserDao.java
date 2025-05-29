@@ -35,19 +35,18 @@ public class UserDao {
         }
     }
     public boolean checkUser(UserData user) {
-Connection conn = mysql.openConnection();
-String sql = "SELECT * FROM users WHERE email = ? OR username = ?";
-try (PreparedStatement pstm = conn.prepareStatement(sql)) {
-    pstm.setString(1, user.getEmail());
-    pstm.setString(2, user.getUsername());
-    java.sql.ResultSet result = pstm.executeQuery();
-    return result.next();
-} catch (SQLException ex) {
-Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-} finally {
-mysql.closeConnection(conn);
-}
-return false;
-}
+        String sql = "SELECT * FROM users WHERE email = ? OR username = ?";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, user.getEmail());
+            pstm.setString(2, user.getUsername());
+            java.sql.ResultSet result = pstm.executeQuery();
+            return result.next();
+        } catch (SQLException ex) {
+        Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return false;
+    }
 }
 
