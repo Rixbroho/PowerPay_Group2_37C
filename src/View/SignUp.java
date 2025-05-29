@@ -114,6 +114,7 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(0, 30, 63));
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Keep me sign in");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
