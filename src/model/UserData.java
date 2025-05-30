@@ -14,13 +14,17 @@ public class UserData {
     private String email;
     private String password;
     private String number;
+    private String userType; // "Admin" or "User"
+    private boolean keepLoggedIn;
+
     
-    
-    public UserData (String username,String email,String password,String number){
+    public UserData (String username,String email,String password,String number,String userType,boolean keepLoggedIn){
         this.username=username;
         this.email=email;
         this.password=password;
         this.number=number;
+        this.userType = userType;
+        this.keepLoggedIn = keepLoggedIn;
     }
     
     public int getId(){
@@ -56,6 +60,20 @@ public class UserData {
     }
     public void setNumber(String number){
         this.number=number;
+    }
+    
+    public String getUserType() {
+        return userType;
+    }
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public boolean getKeepLoggedIn() {
+        return keepLoggedIn;
+    }
+    public void setKeepLoggedIn(boolean keepLoggedIn) {
+        this.keepLoggedIn = keepLoggedIn;
     }
     
 }

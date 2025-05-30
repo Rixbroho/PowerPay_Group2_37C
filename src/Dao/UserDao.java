@@ -20,12 +20,15 @@ public class UserDao {
     Connection conn=mysql.openConnection();
     
     public void signUp(UserData user){
-        String sql="Insert into users (username,email,password,number) values (?,?,?,?)";
+        String sql="INSERT INTO users (username, email, password, phone_number, user_type, keep_logged_in) VALUES (?, ?, ?, ?, ?, ?)";
         try(PreparedStatement pstm=conn.prepareStatement(sql)){
           pstm.setString(1, user.getUsername());
           pstm.setString(2, user.getEmail());
           pstm.setString(3, user.getPassword());
           pstm.setString(4, user.getNumber());
+          pstm.setString(5, user.getUserType());  // e.g., "User" or "Admin"
+          pstm.setBoolean(6, user.getKeepLoggedIn());
+          
           pstm.executeUpdate();
           
         }catch(SQLException ex){
