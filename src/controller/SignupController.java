@@ -63,7 +63,7 @@ public class SignupController {
                 if (check) {
                     JOptionPane.showMessageDialog(userView, "User Already Exists");
                 } else {
-                    userDao.signUp(userdata);
+                    userDao.Createsignup(userdata);
                     JOptionPane.showMessageDialog(userView, "Sign Up Successful!");
                 }
             }catch (Exception ex) {

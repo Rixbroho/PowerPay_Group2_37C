@@ -8,8 +8,10 @@ import Database.MyDatabase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.LoginRequest;
 import model.UserData;
 /**
  *
@@ -17,9 +19,9 @@ import model.UserData;
  */
 public class UserDao {
     MyDatabase mysql=new MyDatabase();
-    Connection conn=mysql.openConnection();
     
-    public void signUp(UserData user){
+    public void Createsignup(UserData user){
+        Connection conn=mysql.openConnection();
         String sql="INSERT INTO users (username, email, password, phone_number, user_type, keep_logged_in) VALUES (?, ?, ?, ?, ?, ?)";
         try(PreparedStatement pstm=conn.prepareStatement(sql)){
           pstm.setString(1, user.getUsername());
@@ -37,11 +39,13 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
     }
+    
     public boolean checkUser(UserData user) {
-        String sql = "SELECT * FROM users WHERE email = ? OR username = ?";
+        Connection conn=mysql.openConnection();
+        String sql = "SELECT * FROM users WHERE email = ? and password = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getEmail());
-            pstm.setString(2, user.getUsername());
+            pstm.setString(2, user.getPassword());
             java.sql.ResultSet result = pstm.executeQuery();
             return result.next();
         } catch (SQLException ex) {
@@ -51,5 +55,35 @@ public class UserDao {
         }
         return false;
     }
+    
+    public UserData login(LoginRequest login){
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM users where username = ? and password = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, login.getUsername());
+            pstmt.setString(2, login.getPassword());
+            ResultSet result = pstmt.executeQuery();
+            if(result.next()){
+                UserData user  = new UserData(
+                    result.getString("email"),
+                    result.getString("username"),
+                    result.getString("password"),
+                    result.getString("phone_number"),
+                    result.getString("user_type"),
+                    result.getBoolean("keep_logged_in")
+                );
+                user.setId(result.getInt("id"));
+                
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return null;
+    }
+    
+    
 }
 

@@ -58,6 +58,7 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
+        button.setBackground(new java.awt.Color(0, 30, 63));
         button.setForeground(new java.awt.Color(255, 255, 255));
         button.setText("Keep me Loged In");
         button.addActionListener(new java.awt.event.ActionListener() {
