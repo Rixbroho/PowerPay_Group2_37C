@@ -434,21 +434,27 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JButton signUpButton;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
-public  void addAddUserListener(ActionListener listener){
-    signUpButton.addActionListener(listener);
-}
-public javax.swing.JTextField getEmailfield(){
-    return email;
-}
-public javax.swing.JPasswordField getPasswordfield(){
-    return password;
-}
-public javax.swing.JTextField getUsernamefield(){
-    return userName;
-}
-public javax.swing.JTextField getNumberfield(){
-    return number;
-}
+    public  void addAddUserListener(ActionListener listener){
+        signUpButton.addActionListener(listener);
+    }
+    public javax.swing.JTextField getEmailfield(){
+        return email;
+    }
+    public javax.swing.JPasswordField getPasswordfield(){
+        return password;
+    }
+    public javax.swing.JTextField getUsernamefield(){
+        return userName;
+    }
+    public javax.swing.JTextField getNumberfield(){
+        return number;
+    }
+    public String getUserType() {
+        return UserType.getSelectedItem().toString();
+    }
+    public javax.swing.JCheckBox getKeepLoggedInCheckBox() {
+        return keepMeLogIn;
+    }
 
 }
 

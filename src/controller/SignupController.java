@@ -5,17 +5,12 @@
 package controller;
 
 import Dao.UserDao;
-
-
-
-import View.SignUp;
-import Dao.UserDao;
-import View.SignUp;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.UserData;
-
+import View.SignUp;
+import View.LogIn;
 /**
  *
  * @author User
@@ -24,18 +19,21 @@ import model.UserData;
 public class SignupController {
     private final UserDao userDao = new UserDao();
     private final SignUp userView;
+    
     public SignupController(SignUp userView) {
         this.userView = userView;
         userView.addAddUserListener(new AddUserListener());
+//        userView.addLoginListener(new LoginListener());
     }
     public void open() {
         this.userView.setVisible(true);
     }
+    
     public void close() {
         this.userView.dispose();
     }
+    
     class AddUserListener implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -43,8 +41,8 @@ public class SignupController {
                 String email = userView.getEmailfield().getText().trim();
                 String password = new String(userView.getPasswordfield().getPassword()).trim();
                 String number = userView.getNumberfield().getText().trim();
-//                String userType = userView.getUserType();  // From dropdown or similar
-//                boolean keepLoggedIn = userView.getKeepLoggedIn().isSelected();  // From checkbox
+                String userType = userView.getUserType();  // From dropdown or similar
+                boolean keepLoggedIn = userView.getKeepLoggedInCheckBox().isSelected();  // From checkbox
 
                 // Validation for empty fields
                 StringBuilder emptyFields = new StringBuilder();
@@ -68,10 +66,20 @@ public class SignupController {
                     userDao.signUp(userdata);
                     JOptionPane.showMessageDialog(userView, "Sign Up Successful!");
                 }
-            } catch (Exception ex) {
+            }catch (Exception ex) {
                 System.out.println("Error Adding User: " + ex.getMessage());
             }
         }
-
     }
+    
+//    class LoginListener implements ActionListener {
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//            LogIn loginView = new LogIn();
+//            LogInController login = new LogInController(loginView);
+//            close();
+//            login.open();
+//        }
+//    }
+    
 }
