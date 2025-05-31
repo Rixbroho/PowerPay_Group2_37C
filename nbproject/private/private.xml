@@ -9,6 +9,13 @@
             <file>file:/D:/PowerPay/src/model/LoginRequest.java</file>
             <file>file:/D:/PowerPay/src/controller/SignupController.java</file>
             <file>file:/D:/PowerPay/src/View/LogIn.java</file>
+            <file>file:/D:/PowerPay/src/View/PaymentMethods.java</file>
+            <file>file:/D:/PowerPay/src/View/SignUp.java</file>
+            <file>file:/D:/PowerPay/src/Database/Database.java</file>
+            <file>file:/D:/PowerPay/src/View/Dashboard.java</file>
+            <file>file:/D:/PowerPay/src/View/History.java</file>
+            <file>file:/D:/PowerPay/src/View/Admindashboard.java</file>
+            <file>file:/D:/PowerPay/src/View/ForgetPassword.java</file>
         </group>
     </open-files>
 </project-private>
