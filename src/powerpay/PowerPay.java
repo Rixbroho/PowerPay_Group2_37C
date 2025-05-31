@@ -15,7 +15,7 @@ public class PowerPay {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Database db=new MyDatabase();
+        Database db=new Database();
         if (db.openConnection() == null) {
             System.out.println("Failed to connect to database.");
         } else {
