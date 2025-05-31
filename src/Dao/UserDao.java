@@ -58,9 +58,9 @@ public class UserDao {
     
     public UserData login(LoginRequest login){
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users where username = ? and password = ?";
+        String sql = "SELECT * FROM users where email = ? and password = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, login.getUsername());
+            pstmt.setString(1, login.getEmail());
             pstmt.setString(2, login.getPassword());
             ResultSet result = pstmt.executeQuery();
             if(result.next()){

@@ -226,7 +226,7 @@ public class LogIn extends javax.swing.JFrame {
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
         // TODO add your handling code here:
-        if(email.getText().equals("USER NAME or Email")){
+        if(email.getText().equals("Email")){
             email.setText("");
         }
     }//GEN-LAST:event_emailFocusGained
@@ -234,7 +234,7 @@ public class LogIn extends javax.swing.JFrame {
     private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
         // TODO add your handling code here:
         if(email.getText().equals("")){
-            email.setText("USER NAME or Email");
+            email.setText("Email");
         }
     }//GEN-LAST:event_emailFocusLost
 
