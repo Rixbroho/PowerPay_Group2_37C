@@ -119,6 +119,7 @@ public class LogIn extends javax.swing.JFrame {
         newAccount.setBorder(null);
         newAccount.setBorderPainted(false);
         newAccount.setContentAreaFilled(false);
+        newAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         newAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newAccountActionPerformed(evt);

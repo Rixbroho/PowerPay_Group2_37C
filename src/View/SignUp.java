@@ -146,6 +146,7 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         signUpButton.setText("Sign up");
+        signUpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signUpButtonActionPerformed(evt);
