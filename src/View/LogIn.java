@@ -4,6 +4,9 @@
  */
 package View;
 
+import controller.LoginController;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author User
@@ -27,7 +30,7 @@ public class LogIn extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        userName = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         button = new javax.swing.JCheckBox();
         LogInButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -42,19 +45,19 @@ public class LogIn extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 30, 63));
 
-        userName.setForeground(new java.awt.Color(51, 51, 51));
-        userName.setText("USER NAME or Email");
-        userName.addFocusListener(new java.awt.event.FocusAdapter() {
+        email.setForeground(new java.awt.Color(51, 51, 51));
+        email.setText("Email");
+        email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                userNameFocusGained(evt);
+                emailFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                userNameFocusLost(evt);
+                emailFocusLost(evt);
             }
         });
-        userName.addActionListener(new java.awt.event.ActionListener() {
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
 
@@ -150,7 +153,7 @@ public class LogIn extends javax.swing.JFrame {
                                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(showPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(169, 169, 169)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +180,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,19 +224,19 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LogInButtonActionPerformed
 
-    private void userNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameFocusGained
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
         // TODO add your handling code here:
-        if(userName.getText().equals("USER NAME or Email")){
-            userName.setText("");
+        if(email.getText().equals("USER NAME or Email")){
+            email.setText("");
         }
-    }//GEN-LAST:event_userNameFocusGained
+    }//GEN-LAST:event_emailFocusGained
 
-    private void userNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_userNameFocusLost
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
         // TODO add your handling code here:
-        if(userName.getText().equals("")){
-            userName.setText("USER NAME or Email");
+        if(email.getText().equals("")){
+            email.setText("USER NAME or Email");
         }
-    }//GEN-LAST:event_userNameFocusLost
+    }//GEN-LAST:event_emailFocusLost
 
     private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
         // TODO add your handling code here:
@@ -263,9 +266,9 @@ public class LogIn extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_forgotPasswordActionPerformed
 
-    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userNameActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
     private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
         // TODO add your handling code here:
@@ -316,6 +319,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JButton LogInButton;
     private javax.swing.JLabel Logo;
     private javax.swing.JCheckBox button;
+    private javax.swing.JTextField email;
     private javax.swing.JButton forgotPassword;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -323,6 +327,19 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JButton newAccount;
     private javax.swing.JPasswordField password;
     private javax.swing.JCheckBox showPassword;
-    private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
+
+    public void addLoginUserListener(ActionListener listener) {
+        LogInButton.addActionListener(listener); // Replace `loginButton` with your actual button variable name
+    }
+
+
+    public String getEmailField() {
+        return email.getText();
+    }
+
+    public String getPasswordField() {
+        return new String(password.getPassword());
+    }
+
 }
