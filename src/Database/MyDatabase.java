@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 /**
  *
- * @author User
+ * @author Rix
  */
 public class MyDatabase implements Database{
 
@@ -19,11 +19,11 @@ public class MyDatabase implements Database{
     public Connection openConnection() {
         try{
             String username="root";
-            String password="anux";
-            String database="oop";
+            String password="password";
+            String database="PowerPay";
             Connection connection;
             connection = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/"+database,username,password
+                "jdbc:mysql://localhost:3305/"+database,username,password
             );
             if(connection == null){
                 System.out.println("Database connection fail");
@@ -51,7 +51,7 @@ public class MyDatabase implements Database{
     }
 
     @Override
-    public ResultSet executeQuery(Connection conn, String query) {
+    public ResultSet runQuery(Connection conn, String query) {
        try{
            Statement stmp=conn.createStatement();
            ResultSet result=stmp.executeQuery(query);
