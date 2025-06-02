@@ -5,13 +5,13 @@
 package controller;
 
 import Dao.UserDao;
+import View.Dashboard;
+import View.LogIn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import model.UserData;
-import View.LogIn;
 import model.LoginRequest;
-import View.Dashboard;
+import model.UserData;
 /**
  *
  * @author User
@@ -36,20 +36,12 @@ public class LoginController {
     class AddUserListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-           try {
-                // Collect email and password from the form
+            System.out.println("Login button clicked");
+            try {
                 String email = userView.getEmailField().getText();
-                String password = new String(userView.getPasswordField().getPassword()); // Correct way for JPasswordField
-
-                // Debugging output
-                System.out.println("Login button clicked");
-                System.out.println("Email: " + email);
-                System.out.println("Password: " + password);
-
-                // Authenticate the user
+                String password = new String(userView.getPasswordField().getPassword());
                 LoginRequest user = new LoginRequest(email, password);
                 UserData loginUser = userDao.login(user);
-
                 if (loginUser == null) {
                     JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 } else {
@@ -59,8 +51,7 @@ public class LoginController {
                     close();
                 }
             } catch (Exception ex) {
-                ex.printStackTrace(); // Better for debugging
-                JOptionPane.showMessageDialog(userView, "Error: " + ex.getMessage());
+                ex.printStackTrace(); // print the full error
             }
         }
     }

@@ -340,8 +340,10 @@ public class LogIn extends javax.swing.JFrame {
         return email;
     }
 
+    private JPasswordField passwordField;
+
     public JPasswordField getPasswordField() {
-        return password;
+        return passwordField;
     }
 
 }
