@@ -181,6 +181,7 @@ public class SignUp extends javax.swing.JFrame {
         loginbtn.setBorder(null);
         loginbtn.setBorderPainted(false);
         loginbtn.setContentAreaFilled(false);
+        loginbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginbtnActionPerformed(evt);
