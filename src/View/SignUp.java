@@ -41,7 +41,7 @@ public class SignUp extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         UserType = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        loginbtn = new javax.swing.JButton();
         showPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -174,16 +174,16 @@ public class SignUp extends javax.swing.JFrame {
         jLabel2.setText("User Type");
         jLabel2.setOpaque(true);
 
-        jButton1.setBackground(new java.awt.Color(0, 30, 63));
-        jButton1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 51));
-        jButton1.setText("Already have a account..");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginbtn.setBackground(new java.awt.Color(0, 30, 63));
+        loginbtn.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        loginbtn.setForeground(new java.awt.Color(255, 0, 51));
+        loginbtn.setText("Already have a account..");
+        loginbtn.setBorder(null);
+        loginbtn.setBorderPainted(false);
+        loginbtn.setContentAreaFilled(false);
+        loginbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginbtnActionPerformed(evt);
             }
         });
 
@@ -233,7 +233,7 @@ public class SignUp extends javax.swing.JFrame {
                         .addComponent(signUpButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(192, 192, 192)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(loginbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -262,7 +262,7 @@ public class SignUp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(loginbtn)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
@@ -367,12 +367,12 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_UserTypeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
         LogIn log=new LogIn();
         log.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginbtnActionPerformed
 
     private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
         // TODO add your handling code here:
@@ -421,7 +421,6 @@ public class SignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> UserType;
     private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -429,15 +428,22 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JCheckBox keepMeLogIn;
+    private javax.swing.JButton loginbtn;
     private javax.swing.JTextField number;
     private javax.swing.JPasswordField password;
     private javax.swing.JCheckBox showPassword;
     private javax.swing.JButton signUpButton;
     private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
+    
     public  void addAddUserListener(ActionListener listener){
         signUpButton.addActionListener(listener);
     }
+    
+    public void addLoginListener(ActionListener listener) {
+        loginbtn.addActionListener(listener);
+    }
+    
     public javax.swing.JTextField getEmailfield(){
         return email;
     }

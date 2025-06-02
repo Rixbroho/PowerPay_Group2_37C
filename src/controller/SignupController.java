@@ -23,7 +23,7 @@ public class SignupController {
     public SignupController(SignUp userView) {
         this.userView = userView;
         userView.addAddUserListener(new AddUserListener());
-//        userView.addLoginListener(new LoginListener());
+        userView.addLoginListener(new LoginListener());
     }
     public void open() {
         this.userView.setVisible(true);
@@ -72,14 +72,14 @@ public class SignupController {
         }
     }
     
-//    class LoginListener implements ActionListener {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            LogIn loginView = new LogIn();
-//            LogInController login = new LogInController(loginView);
-//            close();
-//            login.open();
-//        }
-//    }
+    class LoginListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            LogIn loginView = new LogIn();
+            LoginController login = new LoginController(loginView);
+            close();
+            login.open();
+        }
+    }
     
 }

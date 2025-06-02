@@ -6,6 +6,7 @@ package View;
 
 import controller.LoginController;
 import java.awt.event.ActionListener;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -334,13 +335,13 @@ public class LogIn extends javax.swing.JFrame {
         LogInButton.addActionListener(listener); // Replace `loginButton` with your actual button variable name
     }
 
-
-    public String getEmailField() {
-        return email.getText();
+    
+    public javax.swing.JTextField getEmailField() {
+        return email;
     }
 
-    public String getPasswordField() {
-        return new String(password.getPassword());
+    public JPasswordField getPasswordField() {
+        return password;
     }
 
 }

@@ -17,7 +17,7 @@ import View.Dashboard;
  * @author User
  */
 public class LoginController {
-     private final UserDao userDao = new UserDao();
+    private final UserDao userDao = new UserDao();
     private final LogIn userView;
 
     public LoginController(LogIn userView) {
@@ -36,22 +36,31 @@ public class LoginController {
     class AddUserListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            try {
-                String email = userView.getEmailField();
-                String password = userView.getPasswordField();
+           try {
+                // Collect email and password from the form
+                String email = userView.getEmailField().getText();
+                String password = new String(userView.getPasswordField().getPassword()); // Correct way for JPasswordField
+
+                // Debugging output
+                System.out.println("Login button clicked");
+                System.out.println("Email: " + email);
+                System.out.println("Password: " + password);
+
+                // Authenticate the user
                 LoginRequest user = new LoginRequest(email, password);
                 UserData loginUser = userDao.login(user);
+
                 if (loginUser == null) {
                     JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 } else {
-                    // success
                     JOptionPane.showMessageDialog(userView, "Login Successful");
                     Dashboard dashboard = new Dashboard();
                     dashboard.setVisible(true);
                     close();
                 }
             } catch (Exception ex) {
-                System.out.println("Error adding user: " + ex.getMessage());
+                ex.printStackTrace(); // Better for debugging
+                JOptionPane.showMessageDialog(userView, "Error: " + ex.getMessage());
             }
         }
     }
