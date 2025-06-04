@@ -4,6 +4,7 @@
  */
 package View;
 
+import controller.LoginController;
 import java.awt.event.ActionListener;
 
 /**
@@ -370,9 +371,10 @@ public class SignUp extends javax.swing.JFrame {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
-        LogIn log=new LogIn();
-        log.setVisible(true);
+        LogIn loginView = new LogIn();
+        LoginController login = new LoginController(loginView);
         this.dispose();
+        login.open();
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed

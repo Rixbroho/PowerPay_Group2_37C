@@ -65,6 +65,10 @@ public class SignupController {
                 } else {
                     userDao.Createsignup(userdata);
                     JOptionPane.showMessageDialog(userView, "Sign Up Successful!");
+                    LogIn loginView = new LogIn();
+                    LoginController login = new LoginController(loginView);
+                    close();
+                    login.open();
                 }
             }catch (Exception ex) {
                 System.out.println("Error Adding User: " + ex.getMessage());

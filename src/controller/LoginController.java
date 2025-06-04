@@ -30,8 +30,10 @@ public class LoginController {
     }
 
     public void close() {
+        System.out.println("Closing login window...");
         this.userView.dispose();
     }
+
 
     class AddUserListener implements ActionListener {
         @Override
