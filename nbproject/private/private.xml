@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/E:/PowerPay_Group2_37C/src/View/LogIn.java</file>
             <file>file:/E:/PowerPay_Group2_37C/src/View/SignUp.java</file>
             <file>file:/E:/PowerPay_Group2_37C/src/View/Dashboard.java</file>
@@ -18,6 +19,13 @@
             <file>file:/D:/PowerPay/src/New/java.java</file>
             <file>file:/D:/PowerPay/src/View/EntryPage.java</file>
 >>>>>>> d23c6e177e39f0bcf99647cfa3617804d6a03d7c
+=======
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ForgetPassword.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/SignupController.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/model/LoginRequest.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/model/EmailSender.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/EmailController.java</file>
+>>>>>>> a95dc652938817103e1579ab0cecbcc34e7ca8ee
         </group>
     </open-files>
 </project-private>
