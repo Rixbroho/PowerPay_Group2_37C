@@ -5,7 +5,7 @@
 package controller;
 
 import Dao.UserDao;
-import View.Dashboard;
+import View.UserDashboard;
 import View.LogIn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,7 +48,7 @@ public class LoginController {
                     JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 } else {
                     JOptionPane.showMessageDialog(userView, "Login Successful");
-                    Dashboard dashboard = new Dashboard();
+                    UserDashboard dashboard = new UserDashboard();
                     dashboard.setVisible(true);
                     close();
                 }
