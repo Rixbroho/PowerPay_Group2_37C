@@ -14,7 +14,7 @@ public class EmailController {
                        + "Please enter this code to complete your verification process.\n\n"
                        + "If you did not request this code, please ignore this message.\n\n"
                        + "Best regards,\n"
-                       + "The Support Team";
+                       + "The Support Team(PowerPay)";
 
         return EmailSender.sendEmail(toEmail, subject, message);
     }
