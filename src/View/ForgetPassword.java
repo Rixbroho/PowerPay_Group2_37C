@@ -230,6 +230,7 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void enterCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterCodeActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_enterCodeActionPerformed
 
     private void keepMeLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keepMeLogInActionPerformed
