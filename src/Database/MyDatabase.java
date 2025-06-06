@@ -19,11 +19,11 @@ public class MyDatabase implements Database{
     public Connection openConnection() {
         try{
             String username="root";
-            String password="password";
-            String database="PowerPay";
+            String password="hellobrother123";
+            String database="powerpay";
             Connection connection;
             connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3305/"+database,username,password
+                "jdbc:mysql://localhost:3306/"+database,username,password
             );
             if(connection == null){
                 System.out.println("Database connection fail");
