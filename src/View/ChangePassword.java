@@ -4,18 +4,16 @@
  */
 package View;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author User
  */
-public class ForgetPassword extends javax.swing.JFrame {
+public class ChangePassword extends javax.swing.JFrame {
 
     /**
-     * Creates new form ForgetPasswords
+     * Creates new form ChangePassword
      */
-    public ForgetPassword() {
+    public ChangePassword() {
         initComponents();
     }
 
@@ -29,34 +27,24 @@ public class ForgetPassword extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        sendCode = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        enterCode = new javax.swing.JButton();
+        changePassword = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        keepMeLogIn = new javax.swing.JCheckBox();
-        email = new javax.swing.JTextField();
-        code = new javax.swing.JTextField();
+        newPassword = new javax.swing.JTextField();
+        confirmPassword = new javax.swing.JTextField();
         createNewAccount = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setBackground(new java.awt.Color(0, 30, 63));
+        setPreferredSize(new java.awt.Dimension(712, 450));
 
         jPanel1.setBackground(new java.awt.Color(0, 30, 63));
-
-        sendCode.setBackground(new java.awt.Color(51, 72, 178));
-        sendCode.setForeground(new java.awt.Color(255, 255, 255));
-        sendCode.setText("Send code");
-        sendCode.setBorderPainted(false);
-        sendCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sendCodeActionPerformed(evt);
-            }
-        });
+        jPanel1.setPreferredSize(new java.awt.Dimension(713, 600));
 
         jLabel1.setBackground(new java.awt.Color(27, 141, 214));
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
@@ -70,47 +58,36 @@ public class ForgetPassword extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("OR");
 
-        enterCode.setBackground(new java.awt.Color(51, 72, 178));
-        enterCode.setForeground(new java.awt.Color(255, 255, 255));
-        enterCode.setText("Enter Code");
-        enterCode.setBorderPainted(false);
-        enterCode.addActionListener(new java.awt.event.ActionListener() {
+        changePassword.setBackground(new java.awt.Color(51, 72, 178));
+        changePassword.setForeground(new java.awt.Color(255, 255, 255));
+        changePassword.setText("Change Password");
+        changePassword.setBorderPainted(false);
+        changePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterCodeActionPerformed(evt);
+                changePasswordActionPerformed(evt);
             }
         });
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Don't have a account?");
 
-        keepMeLogIn.setBackground(new java.awt.Color(0, 30, 63));
-        keepMeLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        keepMeLogIn.setText("Keep me sign in");
-        keepMeLogIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                keepMeLogInActionPerformed(evt);
-            }
-        });
-
-        email.setBackground(new java.awt.Color(181, 218, 222));
-        email.setText("Email");
-        email.addFocusListener(new java.awt.event.FocusAdapter() {
+        newPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFocusGained(evt);
+                newPasswordFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                emailFocusLost(evt);
+                newPasswordFocusLost(evt);
             }
         });
-        email.addActionListener(new java.awt.event.ActionListener() {
+        newPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                newPasswordActionPerformed(evt);
             }
         });
 
-        code.addActionListener(new java.awt.event.ActionListener() {
+        confirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codeActionPerformed(evt);
+                confirmPasswordActionPerformed(evt);
             }
         });
 
@@ -127,6 +104,18 @@ public class ForgetPassword extends javax.swing.JFrame {
                 createNewAccountActionPerformed(evt);
             }
         });
+
+        jLabel2.setBackground(new java.awt.Color(27, 141, 214));
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(27, 141, 214));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Confirm Password");
+
+        jLabel3.setBackground(new java.awt.Color(27, 141, 214));
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(27, 141, 214));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("New Password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,24 +139,22 @@ public class ForgetPassword extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addComponent(sendCode, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(286, 286, 286)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
+                        .addGap(101, 101, 101)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(keepMeLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enterCode, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(238, 238, 238)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(222, Short.MAX_VALUE))
+                            .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(newPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                                .addComponent(confirmPassword)))))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,17 +163,17 @@ public class ForgetPassword extends javax.swing.JFrame {
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(sendCode, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(keepMeLogIn)
-                .addGap(12, 12, 12)
-                .addComponent(enterCode, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,7 +183,7 @@ public class ForgetPassword extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(createNewAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,43 +194,38 @@ public class ForgetPassword extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sendCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendCodeActionPerformed
+    private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
         // TODO add your handling code here:
-        String userEmail = email.getText().trim();
-        if (userEmail.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter your email.", "Error", JOptionPane.ERROR_MESSAGE);
+
+    }//GEN-LAST:event_changePasswordActionPerformed
+
+    private void newPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordFocusGained
+        // TODO add your handling code here:
+        if(newPassword.getText().equals("Email")){
+            newPassword.setText("");
         }
-        boolean sent = Controller.EmailController.sendVerificationCode(userEmail);
-   
-        if (sent) {
-            JOptionPane.showMessageDialog(this, "Code sent to your email!");
-        } else {
-            JOptionPane.showMessageDialog(this, "Failed to send code.");
+    }//GEN-LAST:event_newPasswordFocusGained
+
+    private void newPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordFocusLost
+        // TODO add your handling code here:
+        if(newPassword.getText().equals("")){
+            newPassword.setText("Email");
         }
-    }//GEN-LAST:event_sendCodeActionPerformed
+    }//GEN-LAST:event_newPasswordFocusLost
 
-    private void enterCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterCodeActionPerformed
+    private void newPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPasswordActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_enterCodeActionPerformed
+    }//GEN-LAST:event_newPasswordActionPerformed
 
-    private void keepMeLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keepMeLogInActionPerformed
+    private void confirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_keepMeLogInActionPerformed
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codeActionPerformed
+    }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
@@ -251,20 +233,6 @@ public class ForgetPassword extends javax.swing.JFrame {
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_createNewAccountActionPerformed
-
-    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
-        // TODO add your handling code here:
-        if(email.getText().equals("Email")){
-            email.setText("");
-        }
-    }//GEN-LAST:event_emailFocusGained
-
-    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
-        // TODO add your handling code here:
-        if(email.getText().equals("")){
-            email.setText("Email");
-        }
-    }//GEN-LAST:event_emailFocusLost
 
     /**
      * @param args the command line arguments
@@ -283,38 +251,37 @@ public class ForgetPassword extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ForgetPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ForgetPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ForgetPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ForgetPassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ForgetPassword().setVisible(true);
+                new ChangePassword().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField code;
+    private javax.swing.JButton changePassword;
+    private javax.swing.JTextField confirmPassword;
     private javax.swing.JButton createNewAccount;
-    private javax.swing.JTextField email;
-    private javax.swing.JButton enterCode;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JCheckBox keepMeLogIn;
     private javax.swing.JLabel logo;
-    private javax.swing.JButton sendCode;
+    private javax.swing.JTextField newPassword;
     // End of variables declaration//GEN-END:variables
 }
