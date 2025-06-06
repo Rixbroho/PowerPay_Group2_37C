@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Acer
@@ -33,10 +35,10 @@ public class Transcations extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
+        User = new javax.swing.JButton();
+        Transcations = new javax.swing.JButton();
+        Setting = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
@@ -82,25 +84,25 @@ public class Transcations extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Transcations");
 
-        jButton4.setBackground(new java.awt.Color(0, 30, 63));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Dashboard");
+        Dashboard.setBackground(new java.awt.Color(0, 30, 63));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
 
-        jButton5.setBackground(new java.awt.Color(0, 30, 63));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("User");
+        User.setBackground(new java.awt.Color(0, 30, 63));
+        User.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        User.setForeground(new java.awt.Color(255, 255, 255));
+        User.setText("User");
 
-        jButton6.setBackground(new java.awt.Color(0, 30, 63));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Transcations");
+        Transcations.setBackground(new java.awt.Color(0, 30, 63));
+        Transcations.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Transcations.setForeground(new java.awt.Color(255, 255, 255));
+        Transcations.setText("Transcations");
 
-        jButton7.setBackground(new java.awt.Color(0, 30, 63));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Settings");
+        Setting.setBackground(new java.awt.Color(0, 30, 63));
+        Setting.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Setting.setForeground(new java.awt.Color(255, 255, 255));
+        Setting.setText("Settings");
 
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("Nelish");
@@ -200,13 +202,13 @@ public class Transcations extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(Dashboard)
                                 .addGap(64, 64, 64)
-                                .addComponent(jButton5)
+                                .addComponent(User)
                                 .addGap(65, 65, 65)
-                                .addComponent(jButton6)
+                                .addComponent(Transcations)
                                 .addGap(63, 63, 63)
-                                .addComponent(jButton7))
+                                .addComponent(Setting))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGap(477, 477, 477)
                                 .addComponent(jLabel4))
@@ -263,10 +265,10 @@ public class Transcations extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7))
+                    .addComponent(Dashboard)
+                    .addComponent(User)
+                    .addComponent(Transcations)
+                    .addComponent(Setting))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -362,10 +364,10 @@ public class Transcations extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton Dashboard;
+    private javax.swing.JButton Setting;
+    private javax.swing.JButton Transcations;
+    private javax.swing.JButton User;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -397,4 +399,17 @@ public class Transcations extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
+
+        public  void addDashboardListener(ActionListener listener){
+    Dashboard.addActionListener(listener);
+}
+    public  void addSettingListener(ActionListener listener){
+    Setting.addActionListener(listener);
+}
+    public  void addTranscationListener(ActionListener listener){
+    Transcations.addActionListener(listener);
+}
+    public  void addUserListener(ActionListener listener){
+    User.addActionListener(listener);
+}
 }

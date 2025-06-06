@@ -27,6 +27,7 @@ public class SignupController {
     public SignupController(SignUp userView) {
         this.userView = userView;
         userView.addAddUserListener(new AddUserListener());
+        
     }
     public void open() {
         this.userView.setVisible(true);

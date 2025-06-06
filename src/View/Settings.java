@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Acer
@@ -31,10 +33,10 @@ public class Settings extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
+        User = new javax.swing.JButton();
+        Transcations = new javax.swing.JButton();
+        Setting = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -84,25 +86,25 @@ public class Settings extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Settings");
 
-        jButton4.setBackground(new java.awt.Color(0, 30, 63));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 255, 255));
-        jButton4.setText("Dashboard");
+        Dashboard.setBackground(new java.awt.Color(0, 30, 63));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(153, 255, 255));
+        Dashboard.setText("Dashboard");
 
-        jButton5.setBackground(new java.awt.Color(0, 30, 63));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(153, 255, 255));
-        jButton5.setText("User");
+        User.setBackground(new java.awt.Color(0, 30, 63));
+        User.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        User.setForeground(new java.awt.Color(153, 255, 255));
+        User.setText("User");
 
-        jButton6.setBackground(new java.awt.Color(0, 30, 63));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(153, 255, 255));
-        jButton6.setText("Transcations");
+        Transcations.setBackground(new java.awt.Color(0, 30, 63));
+        Transcations.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Transcations.setForeground(new java.awt.Color(153, 255, 255));
+        Transcations.setText("Transcations");
 
-        jButton7.setBackground(new java.awt.Color(0, 30, 63));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(153, 255, 255));
-        jButton7.setText("Settings");
+        Setting.setBackground(new java.awt.Color(0, 30, 63));
+        Setting.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Setting.setForeground(new java.awt.Color(153, 255, 255));
+        Setting.setText("Settings");
 
         jPanel2.setBackground(new java.awt.Color(0, 30, 63));
 
@@ -136,6 +138,11 @@ public class Settings extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 255, 255));
         jButton1.setText("Log Out");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -206,10 +213,13 @@ public class Settings extends javax.swing.JFrame {
         jLabel17.setText("Email");
 
         Fname.setBackground(new java.awt.Color(255, 255, 204));
-        Fname.setText("jTextField1");
+        Fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FnameActionPerformed(evt);
+            }
+        });
 
         Lname.setBackground(new java.awt.Color(255, 255, 204));
-        Lname.setText("jTextField2");
         Lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LnameActionPerformed(evt);
@@ -217,13 +227,11 @@ public class Settings extends javax.swing.JFrame {
         });
 
         email.setBackground(new java.awt.Color(255, 255, 204));
-        email.setText("jTextField3");
 
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Address");
 
         Address.setBackground(new java.awt.Color(255, 255, 204));
-        Address.setText("jTextField4");
         Address.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddressActionPerformed(evt);
@@ -234,7 +242,6 @@ public class Settings extends javax.swing.JFrame {
         jLabel19.setText("Number");
 
         Number.setBackground(new java.awt.Color(255, 255, 204));
-        Number.setText("jTextField5");
 
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Gender");
@@ -243,16 +250,15 @@ public class Settings extends javax.swing.JFrame {
         jLabel21.setText("Province");
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 204));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male ", "Female", "Xakko" }));
 
         jComboBox2.setBackground(new java.awt.Color(255, 255, 204));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gandaki Province", "Karnali Province", "Koshi Province", "Bagmati Province", "Lumbini Province" }));
 
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
         jLabel22.setText("Password");
 
         Password.setBackground(new java.awt.Color(255, 255, 204));
-        Password.setText("jPasswordField1");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,13 +278,13 @@ public class Settings extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(Dashboard)
                                 .addGap(64, 64, 64)
-                                .addComponent(jButton5)
+                                .addComponent(User)
                                 .addGap(65, 65, 65)
-                                .addComponent(jButton6)
+                                .addComponent(Transcations)
                                 .addGap(63, 63, 63)
-                                .addComponent(jButton7))
+                                .addComponent(Setting))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(477, 477, 477)
                                 .addComponent(jLabel4)))
@@ -318,8 +324,8 @@ public class Settings extends javax.swing.JFrame {
                                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Number, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, 159, Short.MAX_VALUE)
+                                    .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(82, 82, 82)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21)
@@ -338,10 +344,10 @@ public class Settings extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7))
+                    .addComponent(Dashboard)
+                    .addComponent(User)
+                    .addComponent(Transcations)
+                    .addComponent(Setting))
                 .addGap(10, 10, 10)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -415,6 +421,14 @@ public class Settings extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AddressActionPerformed
 
+    private void FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FnameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -452,16 +466,16 @@ public class Settings extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Address;
+    private javax.swing.JButton Dashboard;
     private javax.swing.JTextField Fname;
     private javax.swing.JTextField Lname;
     private javax.swing.JTextField Number;
     private javax.swing.JPasswordField Password;
+    private javax.swing.JButton Setting;
+    private javax.swing.JButton Transcations;
+    private javax.swing.JButton User;
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -492,4 +506,17 @@ public class Settings extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
+
+        public  void addDashboardListener(ActionListener listener){
+    Dashboard.addActionListener(listener);
+}
+    public  void addSettingListener(ActionListener listener){
+    Setting.addActionListener(listener);
+}
+    public  void addTranscationListener(ActionListener listener){
+    Transcations.addActionListener(listener);
+}
+    public  void addUserListener(ActionListener listener){
+    User.addActionListener(listener);
+}
 }
