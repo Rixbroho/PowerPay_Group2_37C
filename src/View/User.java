@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author Acer
+ * @author Ishan
  */
 public class User extends javax.swing.JFrame {
 
