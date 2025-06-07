@@ -371,9 +371,6 @@ public class SignUp extends javax.swing.JFrame {
 
     private void loginbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbtnActionPerformed
         // TODO add your handling code here:
-        LogIn loginView = new LogIn();
-        LoginController login = new LoginController(loginView);
-        this.dispose();
     }//GEN-LAST:event_loginbtnActionPerformed
 
     private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed

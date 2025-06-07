@@ -4,6 +4,7 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -247,9 +248,9 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
-        SignUp log=new SignUp();
-        log.setVisible(true);
-        this.dispose();
+        SignUp signUp = new SignUp();
+        signUp.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_createNewAccountActionPerformed
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
@@ -317,4 +318,17 @@ public class ForgetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JButton sendCode;
     // End of variables declaration//GEN-END:variables
+
+    public void addSendCodeListener(ActionListener listener) {
+        sendCode.addActionListener(listener);
+    }
+
+    public void addCreateNewAccountListener(ActionListener listener) {
+        createNewAccount.addActionListener(listener);
+    }
+
+    public javax.swing.JTextField getEmailField() {
+        return email;
+    }
+
 }
