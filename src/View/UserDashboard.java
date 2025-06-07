@@ -6,7 +6,7 @@ package View;
 
 /**
  *
- * @author User
+ * @author Rix
  */
 public class UserDashboard extends javax.swing.JFrame {
 

@@ -4,9 +4,11 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
- * @author Acer
+ * @author Ishan
  */
 public class User extends javax.swing.JFrame {
 
@@ -29,10 +31,10 @@ public class User extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Dashboard = new javax.swing.JButton();
+        User = new javax.swing.JButton();
+        Transcations = new javax.swing.JButton();
+        Setting = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton5 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -76,30 +78,35 @@ public class User extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("User");
 
-        jButton1.setBackground(new java.awt.Color(0, 30, 63));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Dashboard");
+        Dashboard.setBackground(new java.awt.Color(0, 30, 63));
+        Dashboard.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        Dashboard.setText("Dashboard");
 
-        jButton2.setBackground(new java.awt.Color(0, 30, 63));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("User");
+        User.setBackground(new java.awt.Color(0, 30, 63));
+        User.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        User.setForeground(new java.awt.Color(255, 255, 255));
+        User.setText("User");
 
-        jButton3.setBackground(new java.awt.Color(0, 30, 63));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Transcations");
+        Transcations.setBackground(new java.awt.Color(0, 30, 63));
+        Transcations.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Transcations.setForeground(new java.awt.Color(255, 255, 255));
+        Transcations.setText("Transcations");
 
-        jButton4.setBackground(new java.awt.Color(0, 30, 63));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Settings");
+        Setting.setBackground(new java.awt.Color(0, 30, 63));
+        Setting.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Setting.setForeground(new java.awt.Color(255, 255, 255));
+        Setting.setText("Settings");
 
         jButton5.setBackground(new java.awt.Color(0, 30, 63));
         jButton5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(204, 204, 255));
-        jButton5.setText("Add User");
+        jButton5.setText("Add Bill");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 153, 255));
@@ -206,7 +213,7 @@ public class User extends javax.swing.JFrame {
                             .addComponent(jSeparator1)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 475, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 486, Short.MAX_VALUE)
                                 .addComponent(jLabel2))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,13 +253,13 @@ public class User extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(Dashboard)
                                 .addGap(64, 64, 64)
-                                .addComponent(jButton2)
+                                .addComponent(User)
                                 .addGap(65, 65, 65)
-                                .addComponent(jButton3)
+                                .addComponent(Transcations)
                                 .addGap(63, 63, 63)
-                                .addComponent(jButton4))
+                                .addComponent(Setting))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(120, 120, 120)
@@ -278,10 +285,10 @@ public class User extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(Dashboard)
+                    .addComponent(User)
+                    .addComponent(Transcations)
+                    .addComponent(Setting))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -328,7 +335,7 @@ public class User extends javax.swing.JFrame {
                     .addComponent(jLabel21)
                     .addComponent(jLabel22)
                     .addComponent(jLabel23))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -344,6 +351,10 @@ public class User extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,10 +392,10 @@ public class User extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton Dashboard;
+    private javax.swing.JButton Setting;
+    private javax.swing.JButton Transcations;
+    private javax.swing.JButton User;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -419,4 +430,17 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
+
+        public  void addDashboardListener(ActionListener listener){
+    Dashboard.addActionListener(listener);
+}
+    public  void addSettingListener(ActionListener listener){
+    Setting.addActionListener(listener);
+}
+    public  void addTranscationListener(ActionListener listener){
+    Transcations.addActionListener(listener);
+}
+    public  void addUserListener(ActionListener listener){
+    User.addActionListener(listener);
+}
 }
