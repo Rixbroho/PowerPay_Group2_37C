@@ -4,6 +4,21 @@
  */
 package View;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.LineAndShapeRenderer;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.statistics.HistogramDataset;
+
 /**
  *
  * @author Rix
@@ -15,8 +30,123 @@ public class UserDashboard extends javax.swing.JFrame {
      */
     public UserDashboard() {
         initComponents();
+        showPieChart();
+        showLineChart();
+        showHistogram();
+        showBarChart();
+    }
+    
+    public void showPieChart(){
+        //create dataset
+      DefaultPieDataset barDataset = new DefaultPieDataset( );
+      barDataset.setValue( "Elericity" , new Double( 20 ) );  
+      barDataset.setValue( "Internet" , new Double( 20 ) );   
+      barDataset.setValue( "Life Insurance" , new Double( 40 ) );    
+      barDataset.setValue( "Water Bill" , new Double( 10 ) );  
+      
+      //create chart
+       JFreeChart piechart = ChartFactory.createPieChart("Money Use",barDataset, false,true,false);//explain
+      
+        PiePlot piePlot =(PiePlot) piechart.getPlot();
+      
+       //changing pie chart blocks colors
+       piePlot.setSectionPaint("Elericity", new Color(255,255,102));
+        piePlot.setSectionPaint("Internet", new Color(102,255,102));
+        piePlot.setSectionPaint("Life Insurance", new Color(255,102,153));
+        piePlot.setSectionPaint("Water Bill", new Color(0,204,204));
+      
+       
+        piePlot.setBackgroundPaint(Color.white);
+        
+        //create chartPanel to display chart(graph)
+        ChartPanel barChartPanel = new ChartPanel(piechart);
+        PieChart.removeAll();
+        PieChart.add(barChartPanel, BorderLayout.CENTER);
+        PieChart.validate();
+    }
+    
+     public void showLineChart(){
+        //create dataset for the graph
+         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(200, "Amount", "january");
+        dataset.setValue(150, "Amount", "february");
+        dataset.setValue(18, "Amount", "march");
+        dataset.setValue(100, "Amount", "april");
+        dataset.setValue(80, "Amount", "may");
+        dataset.setValue(250, "Amount", "june");
+        
+        //create chart
+        JFreeChart linechart = ChartFactory.createLineChart("contribution","monthly","amount", 
+                dataset, PlotOrientation.VERTICAL, false,true,false);
+        
+        //create plot object
+         CategoryPlot lineCategoryPlot = linechart.getCategoryPlot();
+       // lineCategoryPlot.setRangeGridlinePaint(Color.BLUE);
+        lineCategoryPlot.setBackgroundPaint(Color.white);
+        
+        //create render object to change the moficy the line properties like color
+        LineAndShapeRenderer lineRenderer = (LineAndShapeRenderer) lineCategoryPlot.getRenderer();
+        Color lineChartColor = new Color(204,0,51);
+        lineRenderer.setSeriesPaint(0, lineChartColor);
+        
+         //create chartPanel to display chart(graph)
+        ChartPanel lineChartPanel = new ChartPanel(linechart);
+        LineChart.removeAll();
+        LineChart.add(lineChartPanel, BorderLayout.CENTER);
+        LineChart.validate();
+    }
+     
+    public void showHistogram(){
+        
+         double[] values = { 95, 49, 14, 59, 50, 66, 47, 40, 1, 67,
+                            12, 58, 28, 63, 14, 9, 31, 17, 94, 71,
+                            49, 64, 73, 97, 15, 63, 10, 12, 31, 62,
+                            93, 49, 74, 90, 59, 14, 15, 88, 26, 57,
+                            77, 44, 58, 91, 10, 67, 57, 19, 88, 84                                
+                          };
+ 
+ 
+        HistogramDataset dataset = new HistogramDataset();
+        dataset.addSeries("key", values, 20);
+        
+         JFreeChart chart = ChartFactory.createHistogram("JFreeChart Histogram","Data", "Frequency", dataset,PlotOrientation.VERTICAL, false,true,false);
+            XYPlot plot= chart.getXYPlot();
+        plot.setBackgroundPaint(Color.WHITE);
+
+        
+        
+        ChartPanel barpChartPanel2 = new ChartPanel(chart);
+        Histogram.removeAll();
+        Histogram.add(barpChartPanel2, BorderLayout.CENTER);
+        Histogram.validate();
     }
 
+    /*========================================================================================*/
+    
+    public void showBarChart(){
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.setValue(200, "Amount", "january");
+        dataset.setValue(150, "Amount", "february");
+        dataset.setValue(18, "Amount", "march");
+        dataset.setValue(100, "Amount", "april");
+        dataset.setValue(80, "Amount", "may");
+        dataset.setValue(250, "Amount", "june");
+        
+        JFreeChart chart = ChartFactory.createBarChart("contribution","monthly","amount", 
+                dataset, PlotOrientation.VERTICAL, false,true,false);
+        
+        CategoryPlot categoryPlot = chart.getCategoryPlot();
+        //categoryPlot.setRangeGridlinePaint(Color.BLUE);
+        categoryPlot.setBackgroundPaint(Color.WHITE);
+        BarRenderer renderer = (BarRenderer) categoryPlot.getRenderer();
+        Color clr3 = new Color(204,0,51);
+        renderer.setSeriesPaint(0, clr3);
+        
+        ChartPanel barpChartPanel = new ChartPanel(chart);
+        BarChart.removeAll();
+        BarChart.add(barpChartPanel, BorderLayout.CENTER);
+        BarChart.validate();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,6 +163,7 @@ public class UserDashboard extends javax.swing.JFrame {
         Setting_btn = new javax.swing.JLabel();
         Payments_btn = new javax.swing.JLabel();
         Reports_btn = new javax.swing.JLabel();
+        Reports_btn1 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -62,7 +193,11 @@ public class UserDashboard extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         Reports = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        PieChart = new javax.swing.JPanel();
+        LineChart = new javax.swing.JPanel();
+        Reports2 = new javax.swing.JPanel();
+        Histogram = new javax.swing.JPanel();
+        BarChart = new javax.swing.JPanel();
         Setting = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -138,7 +273,7 @@ public class UserDashboard extends javax.swing.JFrame {
             }
         });
         jPanel3.add(Setting_btn);
-        Setting_btn.setBounds(580, 0, 110, 50);
+        Setting_btn.setBounds(690, 0, 110, 50);
 
         Payments_btn.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
         Payments_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,7 +299,20 @@ public class UserDashboard extends javax.swing.JFrame {
             }
         });
         jPanel3.add(Reports_btn);
-        Reports_btn.setBounds(450, 0, 110, 50);
+        Reports_btn.setBounds(430, 0, 110, 50);
+
+        Reports_btn1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
+        Reports_btn1.setForeground(new java.awt.Color(255, 255, 255));
+        Reports_btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-pie-chart-20.png"))); // NOI18N
+        Reports_btn1.setText("Reports ");
+        Reports_btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Reports_btn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Reports_btn1MouseClicked(evt);
+            }
+        });
+        jPanel3.add(Reports_btn1);
+        Reports_btn1.setBounds(560, 0, 110, 50);
 
         Header.setBackground(new java.awt.Color(8, 26, 50));
 
@@ -551,26 +699,69 @@ public class UserDashboard extends javax.swing.JFrame {
 
         Parent.add(History, "card4");
 
-        jLabel4.setText("Reports");
+        Reports.setBackground(new java.awt.Color(8, 26, 50));
+
+        PieChart.setBackground(new java.awt.Color(10, 30, 58));
+        PieChart.setLayout(new java.awt.BorderLayout());
+
+        LineChart.setBackground(new java.awt.Color(10, 30, 58));
+        LineChart.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout ReportsLayout = new javax.swing.GroupLayout(Reports);
         Reports.setLayout(ReportsLayout);
         ReportsLayout.setHorizontalGroup(
             ReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReportsLayout.createSequentialGroup()
-                .addContainerGap(516, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(423, 423, 423))
+            .addGroup(ReportsLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(PieChart, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addComponent(LineChart, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(148, 148, 148))
         );
         ReportsLayout.setVerticalGroup(
             ReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ReportsLayout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(jLabel4)
-                .addContainerGap(336, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(ReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LineChart, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+                    .addComponent(PieChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         Parent.add(Reports, "card5");
+
+        Reports2.setBackground(new java.awt.Color(8, 26, 50));
+
+        Histogram.setBackground(new java.awt.Color(10, 30, 58));
+        Histogram.setLayout(new java.awt.BorderLayout());
+
+        BarChart.setBackground(new java.awt.Color(10, 30, 58));
+        BarChart.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout Reports2Layout = new javax.swing.GroupLayout(Reports2);
+        Reports2.setLayout(Reports2Layout);
+        Reports2Layout.setHorizontalGroup(
+            Reports2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Reports2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Reports2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Histogram, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(Reports2Layout.createSequentialGroup()
+                        .addGap(0, 76, Short.MAX_VALUE)
+                        .addComponent(BarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(208, 208, 208))
+        );
+        Reports2Layout.setVerticalGroup(
+            Reports2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Reports2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BarChart, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Histogram, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
+        );
+
+        Parent.add(Reports2, "card7");
 
         jLabel14.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabel14.setText("Account Settings");
@@ -812,7 +1003,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Parent, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE))
+                .addComponent(Parent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(main);
@@ -905,6 +1096,14 @@ public class UserDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void Reports_btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reports_btn1MouseClicked
+        // TODO add your handling code here:
+         Parent.removeAll();
+        Parent.add(Reports2);
+        Parent.repaint();
+        Parent.revalidate();
+    }//GEN-LAST:event_Reports_btn1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -941,6 +1140,7 @@ public class UserDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BarChart;
     private javax.swing.JPanel Currentbalance;
     private javax.swing.JPanel Dashboard;
     private javax.swing.JLabel Dashboard_btn;
@@ -948,13 +1148,18 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel DuePayment1;
     private javax.swing.JPanel DuePayment2;
     private javax.swing.JPanel Header;
+    private javax.swing.JPanel Histogram;
     private javax.swing.JPanel History;
     private javax.swing.JLabel History_btn;
+    private javax.swing.JPanel LineChart;
     private javax.swing.JPanel Parent;
     private javax.swing.JPanel Payments;
     private javax.swing.JLabel Payments_btn;
+    private javax.swing.JPanel PieChart;
     private javax.swing.JPanel Reports;
+    private javax.swing.JPanel Reports2;
     private javax.swing.JLabel Reports_btn;
+    private javax.swing.JLabel Reports_btn1;
     private javax.swing.JPanel Setting;
     private javax.swing.JLabel Setting_btn;
     private javax.swing.JButton jButton1;
@@ -984,7 +1189,6 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

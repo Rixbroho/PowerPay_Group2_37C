@@ -22,14 +22,13 @@ public class UserDao {
     
     public void Createsignup(UserData user){
         Connection conn=mysql.openConnection();
-        String sql="INSERT INTO users (username, email, password, phone_number, user_type, keep_logged_in) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql="INSERT INTO users (username, email, password, phone_number, keep_logged_in) VALUES (?, ?, ?, ?, ?)";
         try(PreparedStatement pstm=conn.prepareStatement(sql)){
           pstm.setString(1, user.getUsername());
           pstm.setString(2, user.getEmail());
           pstm.setString(3, user.getPassword());
           pstm.setString(4, user.getNumber());
-          pstm.setString(5, user.getUserType());  // e.g., "User" or "Admin"
-          pstm.setBoolean(6, user.getKeepLoggedIn());
+          pstm.setBoolean(5, user.getKeepLoggedIn());
           
           pstm.executeUpdate();
           
@@ -69,7 +68,6 @@ public class UserDao {
                     result.getString("username"),
                     result.getString("password"),
                     result.getString("phone_number"),
-                    result.getString("user_type"),
                     result.getBoolean("keep_logged_in")
                 );
                 user.setId(result.getInt("id"));

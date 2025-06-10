@@ -35,7 +35,7 @@ public class SignupController {
                 String email = userView.getEmailfield().getText().trim();
                 String password = new String(userView.getPasswordfield().getPassword()).trim();
                 String number = userView.getNumberfield().getText().trim();
-                String userType = userView.getUserType();
+//                String userType = userView.getUserType();
                 boolean keepLoggedIn = userView.getKeepLoggedInCheckBox().isSelected();
 
                 StringBuilder emptyFields = new StringBuilder();
@@ -60,7 +60,7 @@ public class SignupController {
                     return;
                 }
 
-                UserData userdata = new UserData(username, email, password, number, userType, keepLoggedIn);
+                UserData userdata = new UserData(username, email, password, number, keepLoggedIn);
 
                 boolean userExists = userDao.checkUser(userdata);
                 if (userExists) {
