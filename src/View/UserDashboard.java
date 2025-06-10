@@ -388,7 +388,7 @@ public class UserDashboard extends javax.swing.JFrame {
                     .addComponent(Currentbalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(DuePayment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         Parent.add(Dashboard, "card2");
@@ -464,15 +464,17 @@ public class UserDashboard extends javax.swing.JFrame {
             .addGroup(PaymentsLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(518, Short.MAX_VALUE))
+                .addContainerGap(536, Short.MAX_VALUE))
             .addGroup(PaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PaymentsLayout.createSequentialGroup()
                     .addGap(129, 129, 129)
                     .addComponent(DuePayment1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(152, Short.MAX_VALUE)))
+                    .addContainerGap(170, Short.MAX_VALUE)))
         );
 
         Parent.add(Payments, "card3");
+
+        History.setBackground(new java.awt.Color(8, 26, 50));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Due Payment");
@@ -544,7 +546,7 @@ public class UserDashboard extends javax.swing.JFrame {
             .addGroup(HistoryLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(DuePayment2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
         Parent.add(History, "card4");
@@ -565,7 +567,7 @@ public class UserDashboard extends javax.swing.JFrame {
             .addGroup(ReportsLayout.createSequentialGroup()
                 .addGap(275, 275, 275)
                 .addComponent(jLabel4)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(336, Short.MAX_VALUE))
         );
 
         Parent.add(Reports, "card5");
@@ -788,7 +790,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 .addGroup(SettingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(jLabel25))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         Parent.add(Setting, "card6");
@@ -807,10 +809,10 @@ public class UserDashboard extends javax.swing.JFrame {
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainLayout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Parent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Parent, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE))
         );
 
         getContentPane().add(main);
