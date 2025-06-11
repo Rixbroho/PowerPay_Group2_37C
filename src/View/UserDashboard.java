@@ -41,8 +41,8 @@ public class UserDashboard extends javax.swing.JFrame {
       DefaultPieDataset barDataset = new DefaultPieDataset( );
       barDataset.setValue( "Elericity" , new Double( 20 ) );  
       barDataset.setValue( "Internet" , new Double( 20 ) );   
-      barDataset.setValue( "Life Insurance" , new Double( 40 ) );    
-      barDataset.setValue( "Water Bill" , new Double( 10 ) );  
+      barDataset.setValue( "Life Insurance" , new Double( 60 ) );    
+      barDataset.setValue( "Water Bill" , new Double( 90 ) );  
       
       //create chart
        JFreeChart piechart = ChartFactory.createPieChart("Money Use",barDataset, false,true,false);//explain
@@ -76,7 +76,7 @@ public class UserDashboard extends javax.swing.JFrame {
         dataset.setValue(250, "Amount", "june");
         
         //create chart
-        JFreeChart linechart = ChartFactory.createLineChart("contribution","monthly","amount", 
+        JFreeChart linechart = ChartFactory.createLineChart("Spent","monthly","amount", 
                 dataset, PlotOrientation.VERTICAL, false,true,false);
         
         //create plot object
