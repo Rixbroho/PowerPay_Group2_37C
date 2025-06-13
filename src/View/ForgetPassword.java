@@ -4,6 +4,7 @@
  */
 package View;
 
+import controller.SignupController;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
@@ -249,7 +250,9 @@ public class ForgetPassword extends javax.swing.JFrame {
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
         SignUp signUp = new SignUp();
-        signUp.setVisible(true);
+        SignupController controller = new SignupController(signUp);
+        controller.open();
+        
         this.setVisible(false);
     }//GEN-LAST:event_createNewAccountActionPerformed
 
