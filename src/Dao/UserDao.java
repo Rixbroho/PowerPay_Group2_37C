@@ -82,6 +82,33 @@ public class UserDao {
         return null;
     }
     
+    public UserData loginAdmin(LoginRequest login){
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM admin where email = ? and password = ?";
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, login.getEmail());
+            pstmt.setString(2, login.getPassword());
+            ResultSet result = pstmt.executeQuery();
+            if(result.next()){
+                UserData user  = new UserData(
+                    result.getString("email"),
+                    result.getString("username"),
+                    result.getString("password"),
+                    result.getString("phone_number"),
+                    result.getBoolean("keep_logged_in")
+                );
+                user.setId(result.getInt("id"));
+                
+                return user;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return null;
+    }
+    
     
 }
 
