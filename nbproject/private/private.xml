@@ -6,7 +6,22 @@
             <file>file:/D:/PowerPay_Group2_37C/src/controller/ForgetPasswordController.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/Database/MyDatabase.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/Database/Database.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/Dao/UserDao.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/model/EmailSender.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/EmailController.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/LoginController.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/Admindashboard.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ChangePassword.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/Settings.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/SignUp.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/User.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/Transcations.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/PaymentMethods.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/Paybill.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/LogIn.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/History.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/UserDashboard.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ForgetPassword.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/model/UserData.java</file>
         </group>
     </open-files>
 </project-private>
