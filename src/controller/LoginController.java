@@ -47,24 +47,6 @@ public class LoginController {
                 LoginRequest user = new LoginRequest(email, password);
                 UserData loginUser = userDao.login(user);
                 UserData loginAdmin=userDao.loginAdmin(user);
-                
-//                if (loginUser == null) {
-//                    JOptionPane.showMessageDialog(userView, "Invalid Credentials");
-//                } else {
-//                    JOptionPane.showMessageDialog(userView, "Login Successful");
-//                    UserDashboard dashboard = new UserDashboard();
-//                    dashboard.setVisible(true);
-//                    close();
-//                }
-//                
-//                if (loginAdmin == null) {
-//                    JOptionPane.showMessageDialog(userView, "Invalid Credentials");
-//                } else {
-//                    JOptionPane.showMessageDialog(userView, "Login Successful");
-//                    
-//                    dashboard.setVisible(true);
-//                    close();
-//                }
 
                 if (loginUser != null) {
                     JOptionPane.showMessageDialog(userView, "Login Successful");

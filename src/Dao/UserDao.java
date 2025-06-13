@@ -45,7 +45,7 @@ public class UserDao {
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getEmail());
             pstm.setString(2, user.getPassword());
-            java.sql.ResultSet result = pstm.executeQuery();
+            ResultSet result = pstm.executeQuery();
             return result.next();
         } catch (SQLException ex) {
         Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -107,6 +107,21 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
         return null;
+    }
+    
+    public boolean checkMail(String email) {
+        Connection conn=mysql.openConnection();
+        String sql = "SELECT * FROM users WHERE email = ?";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            ResultSet result = pstm.executeQuery();
+            return result.next();
+        } catch (SQLException ex) {
+        Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return false;
     }
     
     
