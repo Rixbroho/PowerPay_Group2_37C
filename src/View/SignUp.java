@@ -96,7 +96,7 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        email.setForeground(new java.awt.Color(204, 204, 204));
+        email.setForeground(new java.awt.Color(51, 51, 51));
         email.setText("Email");
         email.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {

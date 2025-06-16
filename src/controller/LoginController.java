@@ -1,6 +1,7 @@
 package controller;
 
 import Dao.UserDao;
+import View.Admindashboard;
 import View.UserDashboard;
 import View.LogIn;
 import View.SignUp;
@@ -45,14 +46,22 @@ public class LoginController {
 
                 LoginRequest user = new LoginRequest(email, password);
                 UserData loginUser = userDao.login(user);
+                UserData loginAdmin=userDao.loginAdmin(user);
 
-                if (loginUser == null) {
-                    JOptionPane.showMessageDialog(userView, "Invalid Credentials");
-                } else {
+                if (loginUser != null) {
                     JOptionPane.showMessageDialog(userView, "Login Successful");
                     UserDashboard dashboard = new UserDashboard();
                     dashboard.setVisible(true);
                     close();
+                    
+                }else if (loginAdmin != null) {
+                    JOptionPane.showMessageDialog(userView, "Login Successful");
+                    Admindashboard dashboard = new Admindashboard();
+                    dashboard.setVisible(true);
+                    close();
+                    
+                }else {
+                   JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 }
 
             } catch (Exception ex) {

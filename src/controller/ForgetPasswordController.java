@@ -1,15 +1,18 @@
 package controller;
 
+import Dao.UserDao;
 import View.ForgetPassword;
 import View.SignUp;
 import View.LogIn;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.UserData;
 
 public class ForgetPasswordController {
     private final ForgetPassword view;
-
+    private final UserDao userDao = new UserDao();
+    
     public ForgetPasswordController(ForgetPassword view) {
         this.view = view;
         this.view.addSendCodeListener(new SendCodeListener());
@@ -33,12 +36,19 @@ public class ForgetPasswordController {
                 JOptionPane.showMessageDialog(view, "Please enter your email.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            boolean sent = Controller.EmailController.sendVerificationCode(email);
-            if (sent) {
-                JOptionPane.showMessageDialog(view, "Code sent to your email!");
+            
+            boolean userExists = userDao.checkMail(email);
+            if (userExists) {
+                boolean sent = Controller.EmailController.sendVerificationCode(email);
+                if (sent) {
+                    JOptionPane.showMessageDialog(view, "Code sent to your email!");
+                } else {
+                    JOptionPane.showMessageDialog(view, "Failed to send code.");
+                }
             } else {
-                JOptionPane.showMessageDialog(view, "Failed to send code.");
+                JOptionPane.showMessageDialog(view, "This email is not registered.");
             }
+            
         }
     }
 
