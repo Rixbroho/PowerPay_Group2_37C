@@ -177,8 +177,8 @@ public class AdminDashboards extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         DuePayment = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -406,20 +406,17 @@ public class AdminDashboards extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(10, 30, 58));
 
+        jButton2.setText("Add Bill");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-add-20.png"))); // NOI18N
         jLabel7.setText("Quick Action");
-
-        jButton3.setBackground(new java.awt.Color(68, 104, 150));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Add Bill");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -431,8 +428,8 @@ public class AdminDashboards extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addComponent(jLabel7))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(116, 116, 116)
+                        .addComponent(jButton2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -440,9 +437,9 @@ public class AdminDashboards extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel7)
-                .addGap(41, 41, 41)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jButton2)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         DuePayment.setBackground(new java.awt.Color(10, 30, 58));
@@ -1083,10 +1080,6 @@ public class AdminDashboards extends javax.swing.JFrame {
         Parent.revalidate();
     }//GEN-LAST:event_Reports_btn1MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -1123,6 +1116,10 @@ public class AdminDashboards extends javax.swing.JFrame {
             Password.setEchoChar('*');
         }
     }//GEN-LAST:event_showPasswordActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1184,7 +1181,7 @@ public class AdminDashboards extends javax.swing.JFrame {
     private javax.swing.JPanel UserList;
     private javax.swing.JLabel UserList_btn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;

@@ -31,6 +31,7 @@ public class ForgetPasswordController {
     class SendCodeListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println("Clicked");
             String email = view.getEmailField().getText().trim();
             if (email.isEmpty() || email.equals("Email")) {
                 JOptionPane.showMessageDialog(view, "Please enter your email.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -41,7 +42,7 @@ public class ForgetPasswordController {
             if (userExists) {
                 boolean sent = Controller.EmailController.sendVerificationCode(email);
                 if (sent) {
-                    JOptionPane.showMessageDialog(view, "Code sent to your email!");
+                    JOptionPane.showMessageDialog(view, "Code sent to your email by PowerPay!");
                 } else {
                     JOptionPane.showMessageDialog(view, "Failed to send code.");
                 }
