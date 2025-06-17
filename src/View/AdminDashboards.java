@@ -21,14 +21,15 @@ import org.jfree.data.statistics.HistogramDataset;
 
 /**
  *
- * @author Rix
+ * @author User
  */
-public class UserDashboard extends javax.swing.JFrame {
+public class AdminDashboards extends javax.swing.JFrame {
 
     /**
-     * Creates new form UserDashboard
+     * Creates new form AdminDashboards
      */
-    public UserDashboard() {
+    public AdminDashboards() {
+        initComponents();
         initComponents();
         showPieChart();
         showLineChart();
@@ -147,6 +148,7 @@ public class UserDashboard extends javax.swing.JFrame {
         BarChart.add(barpChartPanel, BorderLayout.CENTER);
         BarChart.validate();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -161,7 +163,7 @@ public class UserDashboard extends javax.swing.JFrame {
         History_btn = new javax.swing.JLabel();
         Dashboard_btn = new javax.swing.JLabel();
         Setting_btn = new javax.swing.JLabel();
-        Payments_btn = new javax.swing.JLabel();
+        UserList_btn = new javax.swing.JLabel();
         Reports_btn = new javax.swing.JLabel();
         Reports_btn1 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
@@ -173,16 +175,20 @@ public class UserDashboard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         DuePayment = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        Payments = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        UserList = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         DuePayment1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -276,18 +282,18 @@ public class UserDashboard extends javax.swing.JFrame {
         jPanel3.add(Setting_btn);
         Setting_btn.setBounds(690, 0, 110, 50);
 
-        Payments_btn.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
-        Payments_btn.setForeground(new java.awt.Color(255, 255, 255));
-        Payments_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-bank-cards-20.png"))); // NOI18N
-        Payments_btn.setText("Payments");
-        Payments_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Payments_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+        UserList_btn.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
+        UserList_btn.setForeground(new java.awt.Color(255, 255, 255));
+        UserList_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-bank-cards-20.png"))); // NOI18N
+        UserList_btn.setText("User Details");
+        UserList_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UserList_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Payments_btnMouseClicked(evt);
+                UserList_btnMouseClicked(evt);
             }
         });
-        jPanel3.add(Payments_btn);
-        Payments_btn.setBounds(180, 0, 100, 50);
+        jPanel3.add(UserList_btn);
+        UserList_btn.setBounds(180, 0, 100, 50);
 
         Reports_btn.setFont(new java.awt.Font("Segoe UI Emoji", 1, 13)); // NOI18N
         Reports_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -355,15 +361,15 @@ public class UserDashboard extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Current Balance");
+        jLabel9.setText("Total Balance");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Rs");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("1200.00");
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel31.setText("1200.00");
 
         javax.swing.GroupLayout CurrentbalanceLayout = new javax.swing.GroupLayout(Currentbalance);
         Currentbalance.setLayout(CurrentbalanceLayout);
@@ -375,7 +381,7 @@ public class UserDashboard extends javax.swing.JFrame {
                         .addGap(136, 136, 136)
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel12))
+                        .addComponent(jLabel31))
                     .addGroup(CurrentbalanceLayout.createSequentialGroup()
                         .addGap(194, 194, 194)
                         .addComponent(jLabel10))
@@ -394,7 +400,7 @@ public class UserDashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(CurrentbalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel12))
+                    .addComponent(jLabel31))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -405,20 +411,10 @@ public class UserDashboard extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-add-20.png"))); // NOI18N
         jLabel7.setText("Quick Action");
 
-        jButton2.setBackground(new java.awt.Color(68, 104, 150));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Request Payment");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButton3.setBackground(new java.awt.Color(68, 104, 150));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Advance Payment");
+        jButton3.setText("Add Bill");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -430,88 +426,98 @@ public class UserDashboard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabel7)
-                .addContainerGap(163, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(40, 40, 40))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(57, 57, 57)
-                    .addComponent(jButton3)
-                    .addContainerGap(207, Short.MAX_VALUE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                    .addContainerGap(141, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(37, 37, 37)))
+                .addGap(41, 41, 41)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("Due Payment");
+        DuePayment.setBackground(new java.awt.Color(10, 30, 58));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Name", "Amount", "Due Date", "Status", "Pay now"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Boolean.class
-            };
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel26.setText("Total Admin");
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel28.setText("Total Payments");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel29.setText("Total Users");
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel30.setText("Pending Payment");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("1200");
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel32.setText("1200");
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel33.setText("1200");
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel34.setText("1");
 
         javax.swing.GroupLayout DuePaymentLayout = new javax.swing.GroupLayout(DuePayment);
         DuePayment.setLayout(DuePaymentLayout);
         DuePaymentLayout.setHorizontalGroup(
             DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DuePaymentLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 958, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel34))
+                .addGap(79, 79, 79)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel12))
+                .addGap(79, 79, 79)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel32))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel33))
+                .addGap(124, 124, 124))
         );
         DuePaymentLayout.setVerticalGroup(
             DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DuePaymentLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30))
+                .addGap(28, 28, 28)
+                .addGroup(DuePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout DashboardLayout = new javax.swing.GroupLayout(Dashboard);
@@ -526,7 +532,7 @@ public class UserDashboard extends javax.swing.JFrame {
                         .addComponent(Currentbalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         DashboardLayout.setVerticalGroup(
             DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,39 +548,39 @@ public class UserDashboard extends javax.swing.JFrame {
 
         Parent.add(Dashboard, "card2");
 
-        Payments.setBackground(new java.awt.Color(5, 23, 46));
+        UserList.setBackground(new java.awt.Color(5, 23, 46));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Due Payment");
+        jLabel8.setText("User List");
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "Amount", "Due Date", "Status", "Pay now"
+                "Name", "Email", "Phone Number", "Add bill"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -594,66 +600,69 @@ public class UserDashboard extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout PaymentsLayout = new javax.swing.GroupLayout(Payments);
-        Payments.setLayout(PaymentsLayout);
-        PaymentsLayout.setHorizontalGroup(
-            PaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaymentsLayout.createSequentialGroup()
+        javax.swing.GroupLayout UserListLayout = new javax.swing.GroupLayout(UserList);
+        UserList.setLayout(UserListLayout);
+        UserListLayout.setHorizontalGroup(
+            UserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UserListLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel8)
-                .addContainerGap(755, Short.MAX_VALUE))
-            .addGroup(PaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PaymentsLayout.createSequentialGroup()
+                .addContainerGap(824, Short.MAX_VALUE))
+            .addGroup(UserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(UserListLayout.createSequentialGroup()
                     .addGap(30, 30, 30)
                     .addComponent(DuePayment1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(22, Short.MAX_VALUE)))
         );
-        PaymentsLayout.setVerticalGroup(
-            PaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaymentsLayout.createSequentialGroup()
+        UserListLayout.setVerticalGroup(
+            UserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UserListLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(536, Short.MAX_VALUE))
-            .addGroup(PaymentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(PaymentsLayout.createSequentialGroup()
+            .addGroup(UserListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(UserListLayout.createSequentialGroup()
                     .addGap(129, 129, 129)
                     .addComponent(DuePayment1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(170, Short.MAX_VALUE)))
         );
 
-        Parent.add(Payments, "card3");
+        Parent.add(UserList, "card3");
 
         History.setBackground(new java.awt.Color(8, 26, 50));
 
+        DuePayment2.setBackground(new java.awt.Color(10, 30, 58));
+
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel13.setText("Due Payment");
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("History");
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Name", "Amount", "Due Date", "Status", "Pay now"
+                "Name", "Due Date", "Amout", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1024,7 +1033,7 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void History_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_History_btnMouseClicked
         // TODO add your handling code here:
-         Parent.removeAll();
+        Parent.removeAll();
         Parent.add(History);
         Parent.repaint();
         Parent.revalidate();
@@ -1032,47 +1041,51 @@ public class UserDashboard extends javax.swing.JFrame {
 
     private void Dashboard_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard_btnMouseClicked
         // TODO add your handling code here:
-         Parent.removeAll();
+        Parent.removeAll();
         Parent.add(Dashboard);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_Dashboard_btnMouseClicked
 
+    private void Dashboard_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard_btnMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Dashboard_btnMouseEntered
+
     private void Setting_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Setting_btnMouseClicked
         // TODO add your handling code here:
-         Parent.removeAll();
+        Parent.removeAll();
         Parent.add(Setting);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_Setting_btnMouseClicked
 
-    private void Payments_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Payments_btnMouseClicked
+    private void UserList_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UserList_btnMouseClicked
         // TODO add your handling code here:
-         Parent.removeAll();
-        Parent.add(Payments);
+        Parent.removeAll();
+        Parent.add(UserList);
         Parent.repaint();
         Parent.revalidate();
-    }//GEN-LAST:event_Payments_btnMouseClicked
+    }//GEN-LAST:event_UserList_btnMouseClicked
 
     private void Reports_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reports_btnMouseClicked
         // TODO add your handling code here:
-         Parent.removeAll();
+        Parent.removeAll();
         Parent.add(Reports);
         Parent.repaint();
         Parent.revalidate();
     }//GEN-LAST:event_Reports_btnMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void Reports_btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reports_btn1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Parent.removeAll();
+        Parent.add(Reports2);
+        Parent.repaint();
+        Parent.revalidate();
+    }//GEN-LAST:event_Reports_btn1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void Dashboard_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Dashboard_btnMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Dashboard_btnMouseEntered
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -1102,17 +1115,9 @@ public class UserDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void Reports_btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reports_btn1MouseClicked
-        // TODO add your handling code here:
-         Parent.removeAll();
-        Parent.add(Reports2);
-        Parent.repaint();
-        Parent.revalidate();
-    }//GEN-LAST:event_Reports_btn1MouseClicked
-
     private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
         // TODO add your handling code here:
-         if(showPassword.isSelected()){
+        if(showPassword.isSelected()){
             Password.setEchoChar((char)0);
         }else{
             Password.setEchoChar('*');
@@ -1136,20 +1141,20 @@ public class UserDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminDashboards.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDashboard().setVisible(true);
+                new AdminDashboards().setVisible(true);
             }
         });
     }
@@ -1169,8 +1174,6 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel LineChart;
     private javax.swing.JPanel Parent;
     private javax.swing.JPasswordField Password;
-    private javax.swing.JPanel Payments;
-    private javax.swing.JLabel Payments_btn;
     private javax.swing.JPanel PieChart;
     private javax.swing.JPanel Reports;
     private javax.swing.JPanel Reports2;
@@ -1178,8 +1181,9 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Reports_btn1;
     private javax.swing.JPanel Setting;
     private javax.swing.JLabel Setting_btn;
+    private javax.swing.JPanel UserList;
+    private javax.swing.JLabel UserList_btn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
@@ -1203,9 +1207,16 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1213,10 +1224,8 @@ public class UserDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
