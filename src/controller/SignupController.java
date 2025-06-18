@@ -85,6 +85,7 @@ public class SignupController {
     class LoginListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println("Clicked bttttt");
             LogIn loginView = new LogIn();
             LoginController login = new LoginController(loginView);
             close();

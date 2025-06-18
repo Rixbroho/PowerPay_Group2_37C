@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/SignUp.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/controller/SignupController.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/Admindashboard.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/UserDashboard.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/Transcations.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/User.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/View/AdminDashboards.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/View/ForgetPassword.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/controller/ForgetPasswordController.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/Dao/UserDao.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ChangePassword.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/controller/EmailController.java</file>
-            <file>file:/D:/PowerPay_Group2_37C/src/controller/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

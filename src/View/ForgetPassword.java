@@ -6,6 +6,7 @@ package View;
 
 import controller.SignupController;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 
 /**
  *
@@ -237,11 +238,6 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
-        SignUp signUp = new SignUp();
-        SignupController controller = new SignupController(signUp);
-        controller.open();
-        
-        this.setVisible(false);
     }//GEN-LAST:event_createNewAccountActionPerformed
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
@@ -318,9 +314,17 @@ public class ForgetPassword extends javax.swing.JFrame {
     public void addCreateNewAccountListener(ActionListener listener) {
         createNewAccount.addActionListener(listener);
     }
+    
+    public void addVerifyCodeListener(ActionListener listener) {
+        enterCode.addActionListener(listener);
+    }
 
     public javax.swing.JTextField getEmailField() {
         return email;
+    }
+    
+    public JTextField getCodeField() {
+        return code;
     }
 
 }
