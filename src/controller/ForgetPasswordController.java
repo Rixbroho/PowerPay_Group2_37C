@@ -4,12 +4,9 @@ import Dao.UserDao;
 import View.ChangePassword;
 import View.ForgetPassword;
 import View.SignUp;
-import View.LogIn;
-import java.awt.ActiveEvent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import model.UserData;
 import Controller.EmailController;
 
 
@@ -80,6 +77,12 @@ public class ForgetPasswordController {
             if (EmailController.verifyCode(email, enteredCode)) {
                 JOptionPane.showMessageDialog(view, "Code is correct!");
                 EmailController.clearCode(email);
+                
+                ChangePassword changeView = new ChangePassword();
+                ChangePasswordController changeController = new ChangePasswordController(changeView, email);
+                close(); // Close the forgot password window
+                changeController.open();
+                
 
                 // You can now show reset password view
                 // Or enable a "Next" button, etc.

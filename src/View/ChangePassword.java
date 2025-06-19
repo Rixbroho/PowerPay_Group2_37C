@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JTextField;
+
 /**
  *
  * @author User
@@ -32,7 +35,7 @@ public class ChangePassword extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        changePassword = new javax.swing.JButton();
+        submitButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         newPassword = new javax.swing.JTextField();
         confirmPassword = new javax.swing.JTextField();
@@ -58,13 +61,13 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("OR");
 
-        changePassword.setBackground(new java.awt.Color(51, 72, 178));
-        changePassword.setForeground(new java.awt.Color(255, 255, 255));
-        changePassword.setText("Change Password");
-        changePassword.setBorderPainted(false);
-        changePassword.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setBackground(new java.awt.Color(51, 72, 178));
+        submitButton.setForeground(new java.awt.Color(255, 255, 255));
+        submitButton.setText("Change Password");
+        submitButton.setBorderPainted(false);
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                changePasswordActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
 
@@ -150,7 +153,7 @@ public class ChangePassword extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(newPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                                 .addComponent(confirmPassword)))))
@@ -172,7 +175,7 @@ public class ChangePassword extends javax.swing.JFrame {
                     .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addComponent(changePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -200,10 +203,10 @@ public class ChangePassword extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_changePasswordActionPerformed
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     private void newPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_newPasswordFocusGained
         // TODO add your handling code here:
@@ -270,7 +273,6 @@ public class ChangePassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton changePassword;
     private javax.swing.JTextField confirmPassword;
     private javax.swing.JButton createNewAccount;
     private javax.swing.JLabel jLabel1;
@@ -283,5 +285,18 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo;
     private javax.swing.JTextField newPassword;
+    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
+    
+    public void addSubmitButtonListener(ActionListener listener) {
+        submitButton.addActionListener(listener);
+    }
+    
+    public JTextField getNewPasswordField(){
+        return newPassword;
+    }
+    
+    public JTextField getConfirmPasswordField(){
+        return confirmPassword;
+    }
 }
