@@ -2,6 +2,7 @@ package controller;
 
 import Dao.UserDao;
 import View.Admindashboard;
+import View.ForgetPassword;
 import View.UserDashboard;
 import View.LogIn;
 import View.SignUp;
@@ -20,6 +21,7 @@ public class LoginController {
         this.userView = userView;
         this.userView.addLoginUserListener(new AddUserListener());
         this.userView.addSignUpListener(new SignUpListener());
+        this.userView.addForgotPassword(new ForgotPassword());
     }
 
     public void open() {
@@ -74,10 +76,22 @@ public class LoginController {
     class SignUpListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println("click the sign up");
             SignUp signUpView = new SignUp();
             SignupController signupController = new SignupController(signUpView);
             close();  // close Login window
             signupController.open();  // open SignUp window
+        }
+    }
+    
+    class ForgotPassword implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("click the forgetpassword");
+            ForgetPassword form = new ForgetPassword();
+            ForgetPasswordController controller = new ForgetPasswordController(form);
+            close();
+            controller.open();
         }
     }
 }

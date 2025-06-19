@@ -263,9 +263,6 @@ public class LogIn extends javax.swing.JFrame {
 
     private void forgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordActionPerformed
         // TODO add your handling code here:
-        ForgetPassword forget=new ForgetPassword();
-        forget.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_forgotPasswordActionPerformed
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
@@ -337,6 +334,10 @@ public class LogIn extends javax.swing.JFrame {
     
     public void addSignUpListener(ActionListener listener) {
         signUpButton.addActionListener(listener);  // replace signUpButton with your actual button name
+    }
+    
+    public void addForgotPassword(ActionListener listener) {
+        forgotPassword.addActionListener(listener);  // replace signUpButton with your actual button name
     }
     
     public JTextField getEmailField() {

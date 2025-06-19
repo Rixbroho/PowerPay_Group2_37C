@@ -4,7 +4,9 @@
  */
 package powerpay;
 import Database.*;
+import View.ForgetPassword;
 import View.SignUp;
+import controller.ForgetPasswordController;
 import controller.SignupController;
 /**
  *
@@ -27,6 +29,8 @@ public class PowerPay {
         SignUp signupForm = new SignUp();
         SignupController controller = new SignupController(signupForm);
         controller.open();
+
+         
     }
     
 }

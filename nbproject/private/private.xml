@@ -10,6 +10,13 @@
             <file>file:/D:/PowerPay_Group2_37C/src/View/UserDashboard.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/View/Transcations.java</file>
             <file>file:/D:/PowerPay_Group2_37C/src/View/User.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ForgetPassword.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/ForgetPasswordController.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/AdminDashboards.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/controller/ChangePasswordController.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/powerpay/PowerPay.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/ChangePassword.java</file>
+            <file>file:/D:/PowerPay_Group2_37C/src/View/LogIn.java</file>
         </group>
     </open-files>
 </project-private>
