@@ -5,6 +5,7 @@
 package View;
 
 import java.awt.event.ActionListener;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -29,6 +30,7 @@ public class ChangePassword extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator3 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
@@ -38,10 +40,11 @@ public class ChangePassword extends javax.swing.JFrame {
         submitButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         newPassword = new javax.swing.JTextField();
-        confirmPassword = new javax.swing.JTextField();
         createNewAccount = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        showPassword = new javax.swing.JCheckBox();
+        confirmPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(712, 450));
@@ -88,12 +91,6 @@ public class ChangePassword extends javax.swing.JFrame {
             }
         });
 
-        confirmPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmPasswordActionPerformed(evt);
-            }
-        });
-
         createNewAccount.setBackground(new java.awt.Color(0, 30, 63));
         createNewAccount.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         createNewAccount.setForeground(new java.awt.Color(255, 0, 51));
@@ -119,6 +116,25 @@ public class ChangePassword extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(27, 141, 214));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("New Password");
+
+        showPassword.setBackground(new java.awt.Color(0, 30, 63));
+        showPassword.setForeground(new java.awt.Color(255, 255, 255));
+        showPassword.setText("Show ");
+        showPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPasswordActionPerformed(evt);
+            }
+        });
+
+        confirmPassword.setText("password12345");
+        confirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                confirmPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                confirmPasswordFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,10 +170,13 @@ public class ChangePassword extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(newPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                                .addComponent(confirmPassword)))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(newPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(confirmPassword))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(showPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(107, 107, 107))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,9 +191,10 @@ public class ChangePassword extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(showPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -186,7 +206,7 @@ public class ChangePassword extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(createNewAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,16 +246,35 @@ public class ChangePassword extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_newPasswordActionPerformed
 
-    private void confirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_confirmPasswordActionPerformed
-
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
         SignUp log=new SignUp();
         log.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_createNewAccountActionPerformed
+
+    private void showPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPasswordActionPerformed
+        // TODO add your handling code here:
+        if(showPassword.isSelected()){
+            confirmPassword.setEchoChar((char)0);
+        }else{
+            confirmPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_showPasswordActionPerformed
+
+    private void confirmPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordFocusGained
+        // TODO add your handling code here:
+        if(String.valueOf(confirmPassword.getPassword()).equals("password12345")){
+            confirmPassword.setText("");
+        }
+    }//GEN-LAST:event_confirmPasswordFocusGained
+
+    private void confirmPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_confirmPasswordFocusLost
+        // TODO add your handling code here:
+        if (String.valueOf(confirmPassword.getPassword()).isEmpty()) {
+            confirmPassword.setText("password12345");
+        }
+    }//GEN-LAST:event_confirmPasswordFocusLost
 
     /**
      * @param args the command line arguments
@@ -273,7 +312,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField confirmPassword;
+    private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JButton createNewAccount;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -283,8 +322,10 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel logo;
     private javax.swing.JTextField newPassword;
+    private javax.swing.JCheckBox showPassword;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
     
@@ -296,7 +337,7 @@ public class ChangePassword extends javax.swing.JFrame {
         return newPassword;
     }
     
-    public JTextField getConfirmPasswordField(){
+    public JPasswordField getConfirmPasswordField(){
         return confirmPassword;
     }
 }
