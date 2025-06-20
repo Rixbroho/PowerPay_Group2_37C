@@ -4,9 +4,7 @@
  */
 package powerpay;
 import Database.*;
-import View.ForgetPassword;
 import View.SignUp;
-import controller.ForgetPasswordController;
 import controller.SignupController;
 /**
  *

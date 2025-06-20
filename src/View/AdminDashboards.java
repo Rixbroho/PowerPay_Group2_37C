@@ -4,9 +4,15 @@
  */
 package View;
 
-import controller.LoginController;
+import controller.UserMngmtController;
 import java.awt.BorderLayout;
 import java.awt.Color;
+
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -193,7 +199,7 @@ public class AdminDashboards extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         DuePayment1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        userTable = new javax.swing.JTable();
         History = new javax.swing.JPanel();
         DuePayment2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -413,11 +419,15 @@ public class AdminDashboards extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-add-20.png"))); // NOI18N
         jLabel7.setText("Quick Action");
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 255));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("jButton2");
-        jButton2.setEnabled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setBackground(new java.awt.Color(68, 104, 150));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Add Bill");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setEnabled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
@@ -559,39 +569,46 @@ public class AdminDashboards extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("User List");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        userTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Email", "Phone Number", "Add bill"
+                "S.N", "Name", "Email", "Created_at", "Add bill"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(userTable);
 
         javax.swing.GroupLayout DuePayment1Layout = new javax.swing.GroupLayout(DuePayment1);
         DuePayment1.setLayout(DuePayment1Layout);
@@ -1088,6 +1105,8 @@ public class AdminDashboards extends javax.swing.JFrame {
         Parent.add(UserList);
         Parent.repaint();
         Parent.revalidate();
+        UserMngmtController controller = new UserMngmtController(this);
+        
     }//GEN-LAST:event_UserList_btnMouseClicked
 
     private void Reports_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Reports_btnMouseClicked
@@ -1257,11 +1276,32 @@ public class AdminDashboards extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton logOut;
     private javax.swing.JPanel main;
     private javax.swing.JCheckBox showPassword;
+    private javax.swing.JTable userTable;
     // End of variables declaration//GEN-END:variables
+
+    public void setUserTableData(Object[][] data){
+        DefaultTableModel model = (DefaultTableModel) userTable.getModel();
+        JTableHeader header = userTable.getTableHeader();
+        header.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+        header.setBackground(new java.awt.Color(51, 153, 255)); // Blue background
+        header.setForeground(java.awt.Color.WHITE);             // White text
+        header.setOpaque(true);
+        model.setRowCount(0);
+
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        for (int i = 0; i < userTable.getColumnCount(); i++) {
+            userTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+        
+        for(Object[] row : data){
+            model.addRow(row);
+        }
+    }
 }
