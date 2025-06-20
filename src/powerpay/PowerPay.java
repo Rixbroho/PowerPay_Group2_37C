@@ -4,7 +4,9 @@
  */
 package powerpay;
 import Database.*;
+import View.AdminDashboards;
 import View.SignUp;
+import controller.AdminPanelController;
 import controller.SignupController;
 /**
  *
@@ -27,6 +29,10 @@ public class PowerPay {
         SignUp signupForm = new SignUp();
         SignupController controller = new SignupController(signupForm);
         controller.open();
+        
+//        AdminDashboards admin = new AdminDashboards();
+//        AdminPanelController controller = new AdminPanelController(admin);
+//        controller.open();
     }
     
 }
