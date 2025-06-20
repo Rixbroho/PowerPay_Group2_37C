@@ -4,6 +4,7 @@
  */
 package View;
 
+import controller.LoginController;
 import controller.UserMngmtController;
 import java.awt.BorderLayout;
 import java.awt.Color;
