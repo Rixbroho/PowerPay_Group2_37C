@@ -1,6 +1,7 @@
 package controller;
 
 import Dao.UserDao;
+import View.AdminDashboards;
 import View.Admindashboard;
 import View.ForgetPassword;
 import View.UserDashboard;
@@ -58,7 +59,7 @@ public class LoginController {
                     
                 }else if (loginAdmin != null) {
                     JOptionPane.showMessageDialog(userView, "Login Successful");
-                    Admindashboard dashboard = new Admindashboard();
+                    AdminDashboards dashboard = new AdminDashboards();
                     dashboard.setVisible(true);
                     close();
                     

@@ -420,15 +420,14 @@ public class AdminDashboards extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-add-20.png"))); // NOI18N
         jLabel7.setText("Quick Action");
 
-        jButton3.setBackground(new java.awt.Color(68, 104, 150));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Add Bill");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setEnabled(false);
-        jButton3.setFocusPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setBackground(new java.awt.Color(51, 51, 255));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Add Bill");
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setEnabled(false);
+        jButton2.setFocusPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
@@ -964,8 +963,7 @@ public class AdminDashboards extends javax.swing.JFrame {
                                         .addGroup(SettingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(92, 92, 92))
+                                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(SettingLayout.createSequentialGroup()
                                 .addGroup(SettingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -980,7 +978,7 @@ public class AdminDashboards extends javax.swing.JFrame {
                                         .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(showPassword)))))
-                        .addContainerGap(201, Short.MAX_VALUE))
+                        .addContainerGap(293, Short.MAX_VALUE))
                     .addGroup(SettingLayout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
