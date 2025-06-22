@@ -19,7 +19,7 @@ public class MyDatabase implements Database{
     public Connection openConnection() {
         try{
             String username="root";
-            String password="password";
+            String password="hellobrother123";
             String database="powerpay";
             Connection connection;
             connection = DriverManager.getConnection(
