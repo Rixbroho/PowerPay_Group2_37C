@@ -23,7 +23,7 @@ public class MyDatabase implements Database{
             String database="powerpay";
             Connection connection;
             connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3305/"+database,username,password
+                "jdbc:mysql://127.0.0.1:3305/"+database,username,password
             );
             if(connection == null){
                 System.out.println("Database connection fail");

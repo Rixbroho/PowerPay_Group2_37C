@@ -4,8 +4,9 @@
  */
 package View;
 
+import controller.SignupController;
 import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -216,17 +217,6 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void sendCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendCodeActionPerformed
         // TODO add your handling code here:
-        String userEmail = email.getText().trim();
-        if (userEmail.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter your email.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        boolean sent = Controller.EmailController.sendVerificationCode(userEmail);
-   
-        if (sent) {
-            JOptionPane.showMessageDialog(this, "Code sent to your email!");
-        } else {
-            JOptionPane.showMessageDialog(this, "Failed to send code.");
-        }
     }//GEN-LAST:event_sendCodeActionPerformed
 
     private void enterCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterCodeActionPerformed
@@ -248,9 +238,6 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void createNewAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewAccountActionPerformed
         // TODO add your handling code here:
-        SignUp signUp = new SignUp();
-        signUp.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_createNewAccountActionPerformed
 
     private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
@@ -320,15 +307,24 @@ public class ForgetPassword extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void addSendCodeListener(ActionListener listener) {
-        sendCode.addActionListener(listener);
+        sendCode.addActionListener(listener); // sendCodeButton must be the actual JButton
     }
+
 
     public void addCreateNewAccountListener(ActionListener listener) {
         createNewAccount.addActionListener(listener);
     }
+    
+    public void addVerifyCodeListener(ActionListener listener) {
+        enterCode.addActionListener(listener);
+    }
 
     public javax.swing.JTextField getEmailField() {
         return email;
+    }
+    
+    public JTextField getCodeField() {
+        return code;
     }
 
 }

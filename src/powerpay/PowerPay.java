@@ -27,6 +27,8 @@ public class PowerPay {
         SignUp signupForm = new SignUp();
         SignupController controller = new SignupController(signupForm);
         controller.open();
+
+         
     }
     
 }
