@@ -20,7 +20,7 @@ public class MyDatabase implements Database{
         try{
             String username="root";
             String password="password";
-            String database="PowerPay";
+            String database="powerpay";
             Connection connection;
             connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3305/"+database,username,password

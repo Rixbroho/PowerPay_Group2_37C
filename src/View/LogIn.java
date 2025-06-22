@@ -5,8 +5,10 @@
 package View;
 
 import controller.LoginController;
+import controller.SignupController;
 import java.awt.event.ActionListener;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -39,7 +41,7 @@ public class LogIn extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         forgotPassword = new javax.swing.JButton();
-        newAccount = new javax.swing.JButton();
+        signUpButton = new javax.swing.JButton();
         showPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,17 +115,17 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
 
-        newAccount.setBackground(new java.awt.Color(0, 30, 63));
-        newAccount.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
-        newAccount.setForeground(new java.awt.Color(255, 0, 51));
-        newAccount.setText("Created new account");
-        newAccount.setBorder(null);
-        newAccount.setBorderPainted(false);
-        newAccount.setContentAreaFilled(false);
-        newAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        newAccount.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setBackground(new java.awt.Color(0, 30, 63));
+        signUpButton.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        signUpButton.setForeground(new java.awt.Color(255, 0, 51));
+        signUpButton.setText("Created new account");
+        signUpButton.setBorder(null);
+        signUpButton.setBorderPainted(false);
+        signUpButton.setContentAreaFilled(false);
+        signUpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newAccountActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
 
@@ -171,7 +173,7 @@ public class LogIn extends javax.swing.JFrame {
                         .addComponent(forgotPassword))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(newAccount)))
+                        .addComponent(signUpButton)))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -196,7 +198,7 @@ public class LogIn extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(forgotPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(newAccount)
+                .addComponent(signUpButton)
                 .addContainerGap(94, Short.MAX_VALUE))
         );
 
@@ -254,12 +256,10 @@ public class LogIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordFocusLost
 
-    private void newAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newAccountActionPerformed
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
         // TODO add your handling code here:
-        SignUp signUp=new SignUp();
-        signUp.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_newAccountActionPerformed
+      
+    }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void forgotPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPasswordActionPerformed
         // TODO add your handling code here:
@@ -326,17 +326,20 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JButton newAccount;
     private javax.swing.JPasswordField password;
     private javax.swing.JCheckBox showPassword;
+    private javax.swing.JButton signUpButton;
     // End of variables declaration//GEN-END:variables
 
     public void addLoginUserListener(ActionListener listener) {
         LogInButton.addActionListener(listener); // Replace `loginButton` with your actual button variable name
     }
-
     
-    public javax.swing.JTextField getEmailField() {
+    public void addSignUpListener(ActionListener listener) {
+        signUpButton.addActionListener(listener);  // replace signUpButton with your actual button name
+    }
+    
+    public JTextField getEmailField() {
         return email;
     }
 
