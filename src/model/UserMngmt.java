@@ -5,6 +5,7 @@
 package model;
 
 import java.util.Date;
+import javax.swing.JButton;
 
 /**
  *
@@ -48,10 +49,27 @@ public class UserMngmt {
         this.created_at = created_at;
     }
 
-    public UserMngmt(int id, String username,String email, Date created_at){
+    private String phone_number;
+    public String getPhone_number() { return phone_number; } 
+    public void setPhone_number(String phone_number) { 
+        this.phone_number = phone_number; 
+    }
+    
+    private JButton addBillButton;
+    public JButton getAddBillButton() { 
+        return addBillButton; 
+    }
+    public void setAddBillButton(JButton addBillButton) {
+        this.addBillButton = addBillButton; 
+    }
+    
+    
+    public UserMngmt(int id, String username, String email, Date created_at, String phone_number, JButton jButton){
         this.id = id;
         this.username = username;
         this.email = email;
         this.created_at = created_at;
+        this.phone_number=phone_number;
+        this.addBillButton = addBillButton;
     }
 }

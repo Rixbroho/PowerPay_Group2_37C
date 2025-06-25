@@ -8,11 +8,21 @@ import controller.LoginController;
 import controller.UserMngmtController;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -38,11 +48,13 @@ public class AdminDashboards extends javax.swing.JFrame {
      */
     public AdminDashboards() {
         initComponents();
-        initComponents();
+//        initComponents();
         showPieChart();
         showLineChart();
         showHistogram();
         showBarChart();
+//        userTable.getColumn("Add bill").setCellRenderer(new ButtonRenderer());
+//        userTable.getColumn("Add bill").setCellEditor(new ButtonEditor(new JCheckBox()));
     }
     
     public void showPieChart(){
@@ -571,33 +583,34 @@ public class AdminDashboards extends javax.swing.JFrame {
 
         userTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "S.N", "Name", "Email", "Created_at", "Add bill"
+                "S.N", "Name", "Email", "Created_at", "Number", "Add bill"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
+
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1302,5 +1315,59 @@ public class AdminDashboards extends javax.swing.JFrame {
         for(Object[] row : data){
             model.addRow(row);
         }
-    }
+    }   
+    
+//    class ButtonRenderer extends JButton implements TableCellRenderer {
+//        public ButtonRenderer() {
+//            setOpaque(true);
+//            setForeground(Color.BLACK);
+//            setBackground(UIManager.getColor("Button.background"));
+//            setBorder(UIManager.getBorder("Button.border"));
+//        }
+//
+//        @Override
+//        public Component getTableCellRendererComponent(JTable table, Object value,
+//                boolean isSelected, boolean hasFocus, int row, int column) {
+//            setText((value == null) ? "Add Bill" : value.toString());
+//
+//            if (isSelected) {
+//                setForeground(table.getSelectionForeground());
+//                setBackground(table.getSelectionBackground());
+//            } else {
+//                setForeground(table.getForeground());
+//                setBackground(UIManager.getColor("Button.background"));
+//            }
+//
+//            return this;
+//        }
+//    }
+//
+//    class ButtonEditor extends DefaultCellEditor {
+//        private JButton button;
+//        private int selectedRow;
+//
+//        public ButtonEditor(JCheckBox checkBox) {
+//            super(checkBox);
+//            button = new JButton("Add Bill");
+//            button.setOpaque(true);
+//
+//            button.addActionListener(e -> {
+//                fireEditingStopped();
+////                openAddBillPanel(selectedRow);
+//                System.out.println("add the bill");
+//            });
+//        }
+//
+//        public Component getTableCellEditorComponent(JTable table, Object value,
+//                boolean isSelected, int row, int column) {
+//            selectedRow = row;
+//            button.setText("Add Bill");
+//            return button;
+//        }
+//
+//        public Object getCellEditorValue() {
+//            return "Add Bill";
+//        }
+//    }
 }
+

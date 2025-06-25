@@ -42,6 +42,8 @@ public final class UserMngmtController {
             data[i][1]=u.getUsername();
             data[i][2]=u.getEmail();
             data[i][3]=u.getCreated_at();
+            data[i][4]=u.getPhone_number();
+            data[i][5]=u.getAddBillButton();
         }
         
         view.setUserTableData(data);

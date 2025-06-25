@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JButton;
 /**
  *
  * @author Ishan
@@ -31,8 +32,9 @@ public class UsermngmtDao {
                     rs.getInt("id"),
                     rs.getString("username"),
                     rs.getString("email"),
-                    rs.getDate("created_at")
-
+                    rs.getDate("created_at"),
+                    rs.getString("phone_number"),
+                    new JButton("Add Bill")    
                 );
                 users.add(u);
             }
