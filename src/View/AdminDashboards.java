@@ -1273,4 +1273,8 @@ public class AdminDashboards extends javax.swing.JFrame {
             model.addRow(row);
         }
     }
+    
+    public javax.swing.JTable getUserTable(){
+        return jTable3;
+    }
 }
